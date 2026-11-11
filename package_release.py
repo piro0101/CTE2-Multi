@@ -1,4 +1,4 @@
-"""Build release assets only from the explicitly tracked client/server patch payloads."""
+"""Build release assets only from the explicitly tracked managed client/server patch payloads."""
 from pathlib import Path, PurePosixPath
 import argparse, hashlib, io, json, re, zipfile
 
@@ -34,8 +34,11 @@ def build(release_id, tag):
     output = ROOT / 'dist/release'
     output.mkdir(parents=True, exist_ok=True)
     digest = lambda b: hashlib.sha256(b).hexdigest()
-    manifest = {'schema': 1, 'release_id': release_id, 'minimum_patcher': '1.0.0',
+    manifest = {'schema': 1, 'release_id': release_id, 'minimum_patcher': '1.1.0',
                 'notes': (ROOT / 'release/notes.md').read_text('utf-8'), 'packages': {}}
+    game = json.loads((ROOT / 'release/game-version.json').read_text('utf-8'))
+    assert re.fullmatch(r'[a-zA-Z0-9._-]{1,64}', game['release_id'])
+    manifest['game_release_id'] = game['release_id']
     stamped = None
     for role in ['client', 'server']:
         base = ROOT / 'release/payload' / role
@@ -48,10 +51,11 @@ def build(release_id, tag):
             assert not p.is_symlink()
             raw = p.read_bytes()
             if rel == ADDON:
-                raw = stamp(raw, release_id)
+                assert digest(raw) == game['addon_sha256'], 'Game code changed: update game-version.json to a new compatibility ID after verification'
+                raw = stamp(raw, game['release_id'])
                 if stamped is None:
                     stamped = raw
-                assert stamped == raw, 'Client/server addon differs'
+                assert stamped == raw, 'Client/server game code or compatibility ID differs'
             if rel.endswith('.json'):
                 json.loads(raw.decode('utf-8-sig'))
             if rel.endswith(('.zip', '.jar')):
@@ -59,6 +63,11 @@ def build(release_id, tag):
                     assert nested.testzip() is None, rel
             data[rel] = raw
         assert ADDON in data and len(data) >= 20
+        if role == 'client':
+            convenience = ['CTE2-StepUp-Compat-1.20.1-1.0.0.jar', 'stepitup-2.0.1-1.20.1-forge.jar', 'smartsprint-forge-1.20.1.jar', 'caramelChat-mc1.20.1-forge-1.2.2.jar', 'fullbright-1.0.0.jar']
+            assert all('mods/' + n in data for n in convenience), 'Required convenience mod missing'
+            assert not any('autofish' in n.lower() for n in data), 'Auto fishing must not be distributed'
+            assert data['config/smartsprint.json'] and data['config/stepitup.json5']
         config = data['defaultconfigs/mine_and_slash-server.toml'].decode('utf-8-sig')
         assert re.search(r'^\s*MAP_START_COOLDOWN_SECONDS\s*=\s*10\s*$', config, re.M)
         name = 'patch-' + role + '.zip'
@@ -70,7 +79,7 @@ def build(release_id, tag):
                                       'sha256': digest(raw), 'bytes': len(raw),
                                       'files': [{'path': n, 'bytes': len(b), 'sha256': digest(b)} for n, b in data.items()]}
     (output / 'update.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2), 'utf-8')
-    print('PASS release packages, same client/server release ID, original class bytes, archive CRC and 10-second map default:', release_id)
+    print('PASS release packages, player release ID, original class bytes, archive CRC and 10-second map default:', release_id)
 
 
 if __name__ == '__main__':

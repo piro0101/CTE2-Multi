@@ -17,7 +17,7 @@ jobs:
       - name: Compile patcher and test installation engine
         shell: powershell
         run: ./build.ps1
-      - name: Build matching player and server payloads
+      - name: Build matching game payloads
         shell: powershell
         run: |
           $tag = 'patch-' + $env:GITHUB_RUN_NUMBER
