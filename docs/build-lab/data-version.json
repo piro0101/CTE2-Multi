@@ -1,0 +1,16 @@
+{
+  "public_web": "0.3.0",
+  "game_items": 497,
+  "icons": 232,
+  "textures": 1681,
+  "missing_textures": [],
+  "registry_source": [
+    {
+      "file": "Mine_and_Slash-1.20.1-6.4.13.jar",
+      "sha256": "e3405ef79dd0a3c30646251703588a7de5820bd18af2c1e429d2721aa32a6ce5"
+    }
+  ],
+  "player_saves_exported": false,
+  "saved_personal_builds_exported": false,
+  "python_calculator_reused": true
+}

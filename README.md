@@ -2,6 +2,10 @@
 
 한국어 CTE2 서버 참가자를 위한 자동 업데이트 패치기입니다.
 
+**[CTE2 자료실](https://piro0101.github.io/CTE2-Multi/)** · [아이템 옵션사전](https://piro0101.github.io/CTE2-Multi/items/) · [온라인 Build Lab](https://piro0101.github.io/CTE2-Multi/build-lab/)
+
+CTE 상점의 **자료실** 버튼에서도 같은 주소를 열 수 있습니다. 공개 Build Lab은 브라우저에서 계산하며 캐릭터 파일을 운영자에게 보내지 않습니다.
+
 **[패치기 다운로드](https://github.com/piro0101/CTE2-Multi/releases/latest/download/CTE2-Patcher.exe)** · [최신 변경사항](https://github.com/piro0101/CTE2-Multi/releases/latest)
 
 ## 처음 설치하는 참가자
