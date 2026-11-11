@@ -40,6 +40,7 @@ def build(release_id, tag):
     assert re.fullmatch(r'[a-zA-Z0-9._-]{1,64}', game['release_id'])
     manifest['game_release_id'] = game['release_id']
     stamped = None
+    endgame_config = None
     for role in ['client', 'server']:
         base = ROOT / 'release/payload' / role
         data = {}
@@ -63,6 +64,18 @@ def build(release_id, tag):
                     assert nested.testzip() is None, rel
             data[rel] = raw
         assert ADDON in data and len(data) >= 20
+        challenge_raw = data['config/cte2_endgame.json']
+        challenge = json.loads(challenge_raw.decode('utf-8-sig'))
+        assert 1 <= challenge['maxSessions'] <= 30 and challenge['raidRevives'] >= 0
+        assert challenge['requirePinnacle'] and challenge['minLevel'] == 100
+        if endgame_config is None:
+            endgame_config = challenge_raw
+        assert endgame_config == challenge_raw, 'Client/server endgame defaults differ'
+        with zipfile.ZipFile(io.BytesIO(data[ADDON])) as core:
+            assert 'kr/cte2/multi/endgame/Challenges.class' in core.namelist()
+            dimension = json.loads(core.read('data/cte2_multiplayer/dimension/endgame.json'))
+            assert dimension['generator']['type'] == 'minecraft:flat' and dimension['generator']['settings']['layers'] == []
+            assert not any('smoke' in n.lower() for n in core.namelist()), 'Test server code must not be distributed'
         if role == 'client':
             convenience = ['CTE2-StepUp-Compat-1.20.1-1.0.0.jar', 'stepitup-2.0.1-1.20.1-forge.jar', 'smartsprint-forge-1.20.1.jar', 'caramelChat-mc1.20.1-forge-1.2.2.jar', 'fullbright-1.0.0.jar']
             assert all('mods/' + n in data for n in convenience), 'Required convenience mod missing'
