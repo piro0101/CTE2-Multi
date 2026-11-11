@@ -1,0 +1,53 @@
+{
+  "_comment": "금액 단위는 CTE 청동화. 10청동=1은, 10은=1금, 10금=1백금. 기존 Lightman 동전과는 별개 재화이며 서로 환전하지 않습니다. 가격은 실측 수급량이 아닌 수급 방식 기반 초기값입니다.",
+  "craftingCounts": {
+    "mining": 10,
+    "farming": 10,
+    "fishing": 10,
+    "meat": 10
+  },
+  "itemLeague": {},
+  "leagueFragmentCost": 4,
+  "leagueDropEveryKills": 5,
+  "_comment_saleLimit": "계정별 NPC 재료 매입 한도(CTE 청동화 환산), 한국시간 자정 초기화. 초기 시험값 100000. 여러 캐릭터 슬롯이 한도를 공유합니다.",
+  "_comment_league": "리그 조각은 해당 콘텐츠 적 5마리 처치마다 1개. 같은 팀·같은 지도·64블록 내 살아 있는 플레이어도 획득. 리그 전용품 구매·제작에는 매번 조각 4개가 필요합니다.",
+  "_comment_prices": "일반/고급/희귀/영웅/전설/신화 화폐 구매 초기 가격은 CTE 청동화 32/64/128/256/512/1024 유지. 직접 제작은 같은 등급 암석 4개(신화 8개)+선택 전문기술 재료 10개. 리그 전용품은 두 경로 모두 해당 교환 조각 4개 추가.",
+  "sellBronze": {
+    "mmorpg:material/farming/0": 2,
+    "mmorpg:material/farming/1": 4,
+    "mmorpg:material/farming/2": 8,
+    "mmorpg:material/farming/3": 16,
+    "mmorpg:material/farming/4": 32,
+    "mmorpg:material/farming/5": 64,
+    "mmorpg:material/fishing/0": 5,
+    "mmorpg:material/fishing/1": 10,
+    "mmorpg:material/fishing/2": 20,
+    "mmorpg:material/fishing/3": 40,
+    "mmorpg:material/fishing/4": 80,
+    "mmorpg:material/fishing/5": 160,
+    "mmorpg:material/meat/0": 3,
+    "mmorpg:material/meat/1": 6,
+    "mmorpg:material/meat/2": 12,
+    "mmorpg:material/meat/3": 24,
+    "mmorpg:material/meat/4": 48,
+    "mmorpg:material/meat/5": 96,
+    "mmorpg:material/mining/0": 4,
+    "mmorpg:material/mining/1": 8,
+    "mmorpg:material/mining/2": 16,
+    "mmorpg:material/mining/3": 32,
+    "mmorpg:material/mining/4": 64,
+    "mmorpg:material/mining/5": 128
+  },
+  "itemBronze": {},
+  "rarityBronze": {
+    "common": 32,
+    "uncommon": 64,
+    "rare": 128,
+    "epic": 256,
+    "legendary": 512,
+    "mythic": 1024
+  },
+  "dailySaleBronze": 100000,
+  "_comment_sales": "재료 1개 판매가. 농사 2 / 목축·현상금 3 / 채광 4 / 낚시 5를 0단계 기준으로 적용. 농사는 대량 재배, 목축은 번식 대기 및 군집·전투 수급, 채광은 탐색·광맥 채굴, 낚시는 입질 대기와 기본 드롭 보정을 고려했습니다. 실제 자동화·시간당 수급량에 따라 조정하세요.",
+  "_comment_tiers": "동일 전문기술 내 상위 재료 1개=하위 2개 가치. 기존 타 전문기술 교환은 같은 단계 재료 3개→1개 유지. 어느 전문기술로 교환해도 판매액이 늘어나지 않으며, 가격차가 교환 비율보다 크면 설정 로드를 거부합니다."
+}

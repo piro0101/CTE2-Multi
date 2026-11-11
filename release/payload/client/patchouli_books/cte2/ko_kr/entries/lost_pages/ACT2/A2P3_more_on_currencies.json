@@ -1,0 +1,17 @@
+{
+  "name": "화폐에 대해 더 알아보기",
+  "icon": "mmorpg:currency/affix_tier_up_down",
+  "category": "patchouli:A1lost_pages",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(c:/ftbquests open_book 68EB4F5B367C3C47)&c$(l)---> 퀘스트 페이지 열기 <--- $(/c)$(br)&r&e화폐&r는 장비에 직접 사용할 수 있는 다양한 아이템입니다. 이를 사용하면 장비를 변형시키고 강화할 수 있습니다.\n\n모든 장비에는 정해진 &e잠재력&r 수치가 있습니다. 장비에 화폐를 사용하면 장비의 &e잠재력&r이 감소합니다. 잠재력이 0에 도달하면, 잠재력을 소모하는 화폐는 더 이상 그 장비에 적용할 수 없습니다. \n"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "text": "다만 모든 화폐가 잠재력을 소모하는 것은 아니며, 일부는 언제든지 사용할 수 있습니다. &e혼돈의 오브&r 같은 특정 화폐는 매우 강력한 효과를 부여할 수 있지만, 장비에 부정적인 효과를 일으킬 수도 있습니다. &c혼돈의 오브을 사용하면 아이템이 석탄으로 변할 확률이 25% 있습니다&r.",
+      "item": "mmorpg:currency/chaos_orb"
+    }
+  ]
+}

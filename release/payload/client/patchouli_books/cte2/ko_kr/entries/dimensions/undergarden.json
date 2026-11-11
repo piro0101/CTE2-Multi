@@ -1,0 +1,50 @@
+{
+  "name": "지하정원",
+  "icon": "undergarden:catalyst",
+  "category": "patchouli:dimensions",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "&n&6&l차원:&r&r    &n&l지하정원&r\n&n&6&l구역 레벨:&r&r    &n25 - 40 &r&r\n&n&6&l분노 상태 구역 레벨:&r &n60 - 80&r\n&n&6&l예외:&r  &n없음&r\n&n&6&l해당 퀘스트:&r  &n3막;&r\n&n&6&l차원 게이트웨이:&r  &n3막 게이트웨이;\n&n&6&l차원 보스:&r &n페러스 로트노트; 태양조 움부티; 조각가 통비; 잊혀진 가디언; 이엘 &r "
+    },
+    {
+      "type": "patchouli:text",
+      "text": " 오버월드의 늪지대만큼이나 축축하고 눅눅하지만, 훨씬 더 폐소공포증을 유발하고 역겨운 느낌을 주는 차원입니다.$(br) 이곳의 생물들은 닿으면 타는 듯한 독성 액체에 영향을 받아 부패해버린 돌연변이 야수 같은 존재인 듯합니다. 저마다 고유한 구조물을 가진 거대한 기사와 수호자의 흔적을 몇 군데 발견한 적도 있습니다.$(br) 또한 마법 피해에 어느 정도 내성을 지닌 기이한 가면 쓴 생물들의 종파도 있는 것 같으니, 여행자들은 그들 주변에서 조심해야 합니다."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "지하정원으로 가는 방법",
+      "item": "undergarden:catalyst,minecraft:stone_bricks",
+      "text": "이 차원으로 가고 싶다면&n&l 최소 10개의 석재 벽돌과 네더의 별로 제작한 카탈리스트(레시피는 EMI/JEI에서 확인)를 구해야 합니다&r.\n  &o모서리 블록은 완전히 선택 사항이지만, 만약 그런 스탯이 존재한다면 &2미관 +5&r를 부여했을 겁니다"
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "지하정원 포탈",
+      "text": "게임 내에서 포탈을 시각화하려면 눈 아이콘을 클릭하세요",
+      "multiblock": {
+        "pattern": [
+          [
+            "SOOS"
+          ],
+          [
+            "O  O"
+          ],
+          [
+            "O  O"
+          ],
+          [
+            "O 0O"
+          ],
+          [
+            "SOOS"
+          ]
+        ],
+        "mapping": {
+          "O": "minecraft:stone_bricks",
+          "S": "#minecraft:mineable/pickaxe"
+        }
+      }
+    }
+  ]
+}

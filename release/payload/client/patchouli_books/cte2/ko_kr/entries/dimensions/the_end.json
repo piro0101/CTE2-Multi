@@ -1,0 +1,42 @@
+{
+  "name": "엔드",
+  "icon": "minecraft:end_portal_frame",
+  "category": "patchouli:dimensions",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "&n&6&l차원:&r&r    &n&l엔드&r\n&n&6&l구역 레벨:&r&r    &n50 - 65 &r&r\n&n&6&l분노 상태 구역 레벨:&r &n70 - 90&r\n&n&6&l예외:&r  &n없음&r\n&n&6&l해당 퀘스트:&r  &n5막;&r\n&n&6&l차원 게이트웨이:&r  &n5막 게이트웨이;\n&n&6&l차원 보스:&r &n엔더 드래곤; 공허 벌레; 쉘터러  &r "
+    },
+    {
+      "type": "patchouli:text",
+      "text": " 만물의 종말처럼 보이는 차원입니다. 완전한 무(無) 속에 떠 있는 섬들로 이루어진 조각난 세계에 불과합니다.$(br) 중심 섬은 엔더 드래곤이 지키고 있는 듯해 쉽게 탈출할 수 없습니다. 드래곤을 처치하면 두 가지 길이 열립니다. 하나는 집으로 돌아가는 포탈, 다른 하나는 더 깊은 공허 속으로 들어가 다른 섬들을 탐험할 수 있는 포탈입니다."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "엔드로 가는 방법",
+      "item": "minecraft:ender_eye",
+      "text": "이 차원으로 가고 싶다면&n&l 스트롱홀드에서 발견한 포탈 프레임에 총 12개의 엔더의 눈을 삽입해야 합니다.&r$(2br)때로는 이전에 시도했던 흔적으로 소켓에 눈이 몇 개 이미 끼워져 있는 포탈을 발견할 수도 있습니다."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "엔드 포탈",
+      "text": "이 포탈은 서바이벌에서 직접 만들 수 없으며, 하나만 찾아서 소켓에 눈을 넣어 활성화할 수 있습니다",
+      "multiblock": {
+        "pattern": [
+          [
+            "SOOOS",
+            "O   O",
+            "O 0 O",
+            "O   O",
+            "SOOOS"
+          ]
+        ],
+        "mapping": {
+          "O": "minecraft:end_portal_frame",
+          "S": "minecraft:air"
+        }
+      }
+    }
+  ]
+}

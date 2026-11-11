@@ -1,0 +1,138 @@
+{
+  "_comment_사용법": "강화 소모품의 기본 재료표. 새 경제 시스템은 채광/농사/낚시/목축 네 가지 대체 제작법을 생성합니다. 공통 암석은 유지하고 직업 재료 수량은 cte2_economy.json의 craftingCounts에서 조절합니다. 기존 공통 광물(레드스톤/청금석/다이아/네더라이트 조각)은 대체 제작법에 요구하지 않습니다. 화폐 가격·매입가는 cte2_economy.json을 편집하세요. /cte reload.",
+  "_comment_제작": "오브·씨앗·정수 등 강화 소모품은 주입 작업대에서 추가 제작법으로 제작합니다. 주입 제작물 자체는 상점과 추가 제작 목록에서 제외하며 기존 주입 제작법을 이용하세요. 지도는 장비 제작대에서 제작하지 않습니다. 품목 결과는 1개입니다.",
+  "_comment_지도": "CTE 지도 상점은 수확 지도·오벨리스크 지도·우버 조각·정점 조각만 판매합니다. 일반 지도 판매·교환과 추가 지도 제작법은 제거했습니다. mapCosts.normal은 이전 설정 호환용으로 남겨 둔 미사용 가격표입니다. 수확·오벨리스크 구매 재료는 mapCosts의 해당 항목을 사용합니다. 수확 지도 재료는 종이 8개 + 0단계 농사 재료 8개 + 에메랄드 4개입니다.",
+  "_comment_개별예시": "개별 CTE 화폐 가격은 cte2_economy.json의 itemBronze에 아이템 ID별로 지정하세요. 개별 리그 분류는 itemLeague를 사용합니다. 대체 제작법은 기본표에서 전문기술 재료와 레드스톤/청금석/다이아/네더라이트 조각을 제거한 뒤 선택한 직업 재료를 넣습니다. 그 밖의 품목별 특수 재료는 유지합니다.",
+  "rarityCosts": {
+    "common": [
+      {
+        "item": "mmorpg:stone/0",
+        "count": 4
+      },
+      {
+        "item": "mmorpg:material/mining/0",
+        "count": 10
+      },
+      {
+        "item": "minecraft:redstone",
+        "count": 4
+      }
+    ],
+    "uncommon": [
+      {
+        "item": "mmorpg:stone/1",
+        "count": 4
+      },
+      {
+        "item": "mmorpg:material/mining/1",
+        "count": 10
+      },
+      {
+        "item": "minecraft:redstone",
+        "count": 6
+      }
+    ],
+    "rare": [
+      {
+        "item": "mmorpg:stone/2",
+        "count": 4
+      },
+      {
+        "item": "mmorpg:material/mining/2",
+        "count": 10
+      },
+      {
+        "item": "minecraft:lapis_lazuli",
+        "count": 8
+      }
+    ],
+    "epic": [
+      {
+        "item": "mmorpg:stone/3",
+        "count": 4
+      },
+      {
+        "item": "mmorpg:material/mining/3",
+        "count": 10
+      },
+      {
+        "item": "minecraft:lapis_lazuli",
+        "count": 10
+      }
+    ],
+    "legendary": [
+      {
+        "item": "mmorpg:stone/4",
+        "count": 4
+      },
+      {
+        "item": "mmorpg:material/mining/4",
+        "count": 10
+      },
+      {
+        "item": "minecraft:diamond",
+        "count": 4
+      }
+    ],
+    "mythic": [
+      {
+        "item": "mmorpg:stone/5",
+        "count": 8
+      },
+      {
+        "item": "mmorpg:material/mining/5",
+        "count": 10
+      },
+      {
+        "item": "minecraft:netherite_scrap",
+        "count": 1
+      }
+    ]
+  },
+  "itemCosts": {},
+  "mapCosts": {
+    "normal": [
+      {
+        "item": "minecraft:paper",
+        "count": 4
+      },
+      {
+        "item": "mmorpg:material/mining/0",
+        "count": 8
+      },
+      {
+        "item": "mmorpg:stone/0",
+        "count": 1
+      }
+    ],
+    "harvest": [
+      {
+        "item": "minecraft:paper",
+        "count": 8
+      },
+      {
+        "item": "mmorpg:material/farming/0",
+        "count": 8
+      },
+      {
+        "item": "minecraft:emerald",
+        "count": 4
+      }
+    ],
+    "obelisk": [
+      {
+        "item": "minecraft:paper",
+        "count": 8
+      },
+      {
+        "item": "mmorpg:material/mining/0",
+        "count": 8
+      },
+      {
+        "item": "minecraft:quartz",
+        "count": 8
+      }
+    ]
+  },
+  "_comment_오브조정": "오브·씨앗·정수 등 강화 소모품의 채광 재료는 등급·단계에 관계없이 품목 1개당 10개입니다. 사용하는 채광 재료 단계는 유지합니다. 암석은 일반~전설 4개, 신화 8개이며 나머지 재료·지도·스타터팩 가격은 유지합니다."
+}

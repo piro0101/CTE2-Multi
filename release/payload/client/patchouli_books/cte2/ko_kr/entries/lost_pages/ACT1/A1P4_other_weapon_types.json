@@ -1,0 +1,16 @@
+{
+  "name": "기타 무기 종류",
+  "icon": "roe_weapons:cursed_greatsword",
+  "category": "patchouli:A1lost_pages",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(c:/ftbquests open_book 1367285A94791954)&c$(l)---> 퀘스트 페이지 열기 <--- $(/c)$(br)&rCTE2에는 다양한 커스텀 무기 종류가 존재합니다. 아래는 모든 무기 종류의 목록이며, 커스텀 무기는 &e노란색&r으로 강조 표시되어 있습니다.$(2br)검, 도끼, 활, 석궁, &e지팡이, 단검, 창, 망치, 대검, 낫, 건틀릿&r.$(2br) \n"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "이 무기들을 제작할 때는 Mine and Slash 스탯을 부여하기 위해 장비 스탯 영혼이 필요하다는 점을 유의하십시오.$(2br)CTE2에서는 &e양손 무기&r도 장착할 수 있습니다. 현재 &e창, 대검, 낫&r이 양손 무기로 분류됩니다.$(2br)또한 &e한손 무기라면 두 자루를 동시에 장착&r할 수 있습니다! 보조 손에 착용한 무기는 스탯의 &e25%&r만 제공합니다."
+    }
+  ]
+}

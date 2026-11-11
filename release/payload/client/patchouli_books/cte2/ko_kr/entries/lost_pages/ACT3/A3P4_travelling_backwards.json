@@ -1,0 +1,14 @@
+{
+    "name": "거꾸로 되짚는 여행",
+    "icon": "mmorpg:mob_effects/slow",
+    "category": "patchouli:A1lost_pages",
+	"sortnum":15,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "$(c:/ftbquests open_book 45501F3F04639DB1)&c$(l)---> 퀘스트 페이지 열기 <--- $(/c)$(br)&r탐험을 위해 지상 세계로 돌아가고 싶지만, 레벨이 너무 낮아 즐길 만한 경험이 되지 않는다고 느껴본 적 있나요? 특정 기준 레벨에 도달하면, 지나온 차원들이 '격노'하여 레벨 범위가 늘어나, 플레이어가 다시 돌아가 과거의 차원을 즐길 수 있게 됩니다!"},
+{            "type": "patchouli:text",
+            "text": "&e지상 세계&r - &b50-70&r레벨$(br)&e네더&r - &b55-75&r레벨$(br)&e지하정원(Undergarden)&r - &b60-80&r레벨$(br)&e에버브라이트/에버돈&r - &b65-85&r레벨$(br)&e엔드&r - &b70-90&r레벨$(br)&e저편&r - &b75-95&r레벨"
+		}
+    ]
+}

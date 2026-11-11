@@ -1,0 +1,226 @@
+
+#일반 설정
+[general]
+	#Vivecraft로 접속하는 클라이언트와 그들의 Vivecraft 버전을 로그에 기록합니다.
+	debug = false
+	#OP가 서버에 접속할 때 새 모드 버전을 확인하고 시스템 메시지를 보냅니다.
+	checkForUpdate = false
+	#확인할 업데이트 종류입니다.
+	# r: 정식 버전, b: 베타, a: 알파
+	checkForUpdateType = "r"
+	#'true'로 설정하면 VR 플레이어만 서버에 접속하도록 허용합니다.
+	# 활성화하면 VR 실시간 전환이 자동으로 비활성화됩니다.
+	vr_only = false
+	#'true'로 설정하면 Vivecraft가 설치된 플레이어만 서버에 접속하도록 허용합니다.
+	vive_only = false
+	#'true'로 설정하면 서버 OP가 VR/Vivecraft 전용 설정을 우회하도록 허용합니다.
+	allow_op = true
+	#플레이어를 추방하거나 환영 메시지를 보내기 전 대기할 시간(초)입니다.
+	# 이 시간 안에 플레이어 클라이언트가 Vivecraft VERSION 정보를 보내야 합니다.
+	# default: 10.00, min: 0.00, max: 100.00
+	messageAndKickDelay = 10.0
+	#VR 플레이어가 리스폰할 때 무작위로 재미있는 케이크와 음료를 지급합니다.
+	vrFun = false
+	#플레이어 위치 데이터를 보낸 플레이어 본인에게도 다시 보냅니다, 보통은 필요하지 않습니다.
+	# 리플레이 모드 등을 사용하는 전용 서버에서 활성화하세요.
+	sendDataToOwner = false
+	#서버 접속이 허용되는 최소 Vivecraft 버전입니다.
+	# 더 낮은 버전으로 접속하면 추방됩니다.
+	# 형식은 다음과 같아야 합니다: X.X.X
+	minViveVersion = ""
+	#즉시 설정 변경을 지원하지 않는 플레이어를 설정 변경 시 추방시킵니다. 이렇게 하면 재접속이 강제됩니다.
+	kickPlayersOnSettingUpdate = false
+
+#플레이어가 특정 행동을 할 때 전송되는 메시지를 설정합니다.
+#메시지를 빈 값으로 설정하면 전송하지 않습니다. 예: leaveMessage = ""
+# 플레이어 이름을 넣으려면 메시지에 '&player'를 사용하세요.
+# 두 개의 값이 필요한 메시지(예: 몹에 의한 사망)는 두 번째 값에 '&cause'를 사용하세요.
+[messages]
+	#모든 메시지를 활성화 또는 비활성화합니다.
+	enabled = false
+	#플레이어가 VR을 활성화한 상태로 접속할 때 전송되는 메시지입니다.
+	welcomeVR = "%s has joined with standing VR!"
+	#플레이어가 VR을 비활성화한 상태로 접속할 때 전송되는 메시지입니다.
+	welcomeNonVR = "%s has joined with Non-VR companion!"
+	#플레이어가 착석 VR 모드로 접속할 때 전송되는 메시지입니다.
+	welcomeSeated = "%s has joined with seated VR!"
+	#플레이어가 서버를 떠날 때 전송되는 메시지입니다.
+	leaveMessage = "%s has disconnected from the server!"
+	#Vivecraft를 설치하지 않은 플레이어가 접속할 때 전송되는 메시지입니다.
+	welcomeVanilla = "%s has joined as a Muggle!"
+	#플레이어가 VR을 활성화한 상태로 사망할 때 전송되는 메시지입니다.
+	deathVR = "%s died in standing VR!"
+	#플레이어가 VR을 비활성화한 상태로 사망할 때 전송되는 메시지입니다.
+	deathNonVR = "%s died in Non-VR companion!"
+	#플레이어가 착석 VR 모드로 사망할 때 전송되는 메시지입니다.
+	deathSeated = "%s died in seated VR!"
+	#Vivecraft 없이 사망할 때 전송되는 메시지입니다.
+	deathVanilla = "%s died as a Muggle!"
+	#플레이어가 VR을 활성화한 상태로 몹에 의해 사망할 때 전송되는 메시지입니다.
+	deathByMobVR = "%1$s was slain by %2$s in standing VR!"
+	#플레이어가 VR을 비활성화한 상태로 몹에 의해 사망할 때 전송되는 메시지입니다.
+	deathByMobNonVR = "%1$s was slain by %2$s in Non-VR companion!"
+	#플레이어가 착석 VR 모드에서 몹에 의해 사망할 때 전송되는 메시지입니다.
+	deathByMobSeated = "%1$s was slain by %2$s in seated VR!"
+	#Vivecraft 없이 몹에 의해 사망할 때 전송되는 메시지입니다.
+	deathByMobVanilla = "%1$s was slain by %2$s as a Muggle!"
+	#'Vivecraft 전용' 설정으로 인해 플레이어가 추방될 때 전송되는 메시지입니다.
+	KickViveOnly = "This server is configured for Vivecraft players only."
+	#'VR 전용' 설정으로 인해 플레이어가 추방될 때 전송되는 메시지입니다.
+	KickVROnly = "This server is configured for VR players only."
+	#'최소 Vivecraft 버전' 설정으로 인해 플레이어가 추방될 때 전송되는 메시지입니다.
+	# 필요한 Vivecraft 버전은 '&minVersion'으로 표시합니다. 
+	# 사용자의 Vivecraft 버전은 '&userVersion'으로 표시합니다.
+	KickOutdatedViveVersion = "This server is configured to only allow Vivecraft '&minVersion' and newer. You are using Vivecraft '&userVersion'"
+
+#VR 플레이어를 위한 바닐라 수정
+[vrChanges]
+	#기립 VR 플레이어에게 크리퍼가 부풀어올라 폭발하는 거리입니다.
+	# 바닐라 거리: 3
+	# default: 1.75, min: 0.10, max: 10.00
+	creeperSwellDistance = 1.75
+	#VR 플레이어가 비주손 아이템으로도 공격/채광할 수 있도록 허용합니다.
+	dualWielding = true
+	#VR 플레이어가 발로 타격할 때 추가되는 근접 피해량입니다.
+	# 이 값은 부츠의 방어구 속성에 비례하여, 방어구 레벨당 이 배율만큼 추가 피해를 줍니다.
+	# 0.0으로 설정하면 비활성화됩니다.
+	# default: 0.00, min: 0.00, max: 5.00
+	bootsArmorDamage = 0.0
+	#몹이 기립 VR 플레이어에게 근접 공격을 사용할 수 있는 범위를 조정합니다.
+	# 이는 바닐라 범위(0.8블록)에서 줄어드는 값으로, 0.0은 변화 없음을 의미하며, -0.7은 몹이 플레이어를 거의 건드릴 정도로 가까워져야 공격할 수 있음을 의미합니다.
+	# 너무 낮게 설정하면 몹이 플레이어 바로 앞에서 멈춰서 공격하지 않을 수 있습니다!
+	# default: -0.40, min: -0.70, max: 0.00
+	mobAttackRangeAdjustment = -0.4
+	#투사체는 기본적으로 항상 같은 방향으로 발사되지 않도록 부정확도가 적용됩니다.
+	# 이 설정으로 VR 플레이어의 부정확도를 조정할 수 있습니다.
+	# 1.0은 바닐라와 동일하며, 0.0은 부정확도가 전혀 없음을 의미합니다.
+	# default: 1.00, min: 0.00, max: 1.00
+	projectileInaccuracyMultiplier = 1.0
+	#VR 플레이어가 블록을 너무 빠르게 파괴하지 못하도록 막는 바닐라 검사를 우회할 수 있도록 허용합니다.
+	allowFasterBlockBreaking = true
+	#VR 플레이어가 방패를 실제로 사용하지 않고 들고만 있어도 공격을 막을 수 있도록 허용합니다. 이를 통해 속도를 늦추지 않고도 공격을 막을 수 있습니다.
+	allowRoomscaleShieldBlocking = true
+	#VR 플레이어가 방패를 실제로 사용하는 중에도 엔티티를 공격할 수 있도록 허용합니다. (이 설정은 룸스케일 방패 막기에는 영향을 주지 않습니다)
+	allowAttacksWhileBlocking = true
+	#룸스케일 방패 막기로 공격을 막았을 때 방패가 재사용 대기 상태가 되는 틱 수입니다.
+	# 0으로 설정하면 비활성화됩니다.
+	# default: 0, min: 0, max: 1000
+	roomscaleShieldCooldown = 0
+	#룸스케일 방패 막기 사용 시 방패를 재사용 대기 상태로 만들기 위한 최소 공격 피해량입니다.
+	# default: 3.00, min: 0.00, max: 100.00
+	roomscaleShieldCooldownDamageTrigger = 3.0
+
+	#활 피해량 조정
+	[vrChanges.bow]
+		#기립 모드 VR 플레이어의 궁술 피해 배율입니다.
+		# 1.0으로 설정하면 비활성화됩니다.
+		# default: 2.00, min: 1.00, max: 10.00
+		standingMultiplier = 1.0
+		#착석 모드 VR 플레이어의 궁술 피해 배율입니다.
+		# 1.0으로 설정하면 비활성화됩니다.
+		# default: 1.00, min: 1.00, max: 10.00
+		seatedMultiplier = 1.0
+		#기립 모드 VR 플레이어의 헤드샷 피해 배율입니다.
+		# 1.0으로 설정하면 비활성화됩니다.
+		# default: 3.00, min: 1.00, max: 10.00
+		standingHeadshotMultiplier = 1.0
+		#착석 모드 VR 플레이어의 헤드샷 피해 배율입니다.
+		# 1.0으로 설정하면 비활성화됩니다.
+		# default: 2.00, min: 1.00, max: 10.00
+		seatedHeadshotMultiplier = 1.0
+		#바닐라/비VR 플레이어의 헤드샷 피해 배율입니다.
+		# 1.0으로 설정하면 비활성화됩니다.
+		# default: 1.00, min: 1.00, max: 10.00
+		vanillaHeadshotMultiplier = 1.0
+		#플레이어에게 헤드샷을 알리는 표시기입니다. 옵션은 다음과 같습니다:
+		# "NONE": 표시기 없음.
+		# "AUDIO": 사격자 근처에서 소리를 재생합니다.
+		# "VISUAL": 타격 위치에 파티클을 생성합니다.
+		# "BOTH": 소리와 시각 효과 모두 표시합니다.
+		headshotIndicator = "BOTH"
+
+#PVP 설정
+[pvp]
+	#피해를 입히려 했던 플레이어에게 서버에 의해 피해가 차단되었음을 알립니다.
+	notifyBlockedDamage = false
+	#기립 VR 플레이어끼리 서로 피해를 줄 수 있도록 허용합니다.
+	VRvsVR = true
+	#착석 VR 플레이어끼리 서로 피해를 줄 수 있도록 허용합니다.
+	SEATEDVRvsSEATEDVR = true
+	#기립 VR 플레이어와 비VR 플레이어가 서로 피해를 줄 수 있도록 허용합니다.
+	VRvsNONVR = true
+	#착석 VR 플레이어와 비VR 플레이어가 서로 피해를 줄 수 있도록 허용합니다.
+	SEATEDVRvsNONVR = true
+	#기립 VR 플레이어와 착석 VR 플레이어가 서로 피해를 줄 수 있도록 허용합니다.
+	VRvsSEATEDVR = true
+
+#Climbey 이동 설정
+[climbey]
+	#'점프 부츠'와 '등반 발톱'의 사용을 허용합니다.
+	enabled = true
+	#차단 목록에 있는 블록이 어떻게 해석되는지 지정합니다. 옵션은 다음과 같습니다:
+	# "DISABLED": 목록이 무시됩니다. 모든 블록을 오를 수 있습니다.
+	# "WHITELIST": 목록에 있는 블록만 오를 수 있습니다.
+	# "BLACKLIST": 목록에 있는 블록을 제외한 모든 블록을 오를 수 있습니다
+	blockmode = "DISABLED"
+	#WHITELIST/BLACKLIST 블록 모드에서 사용할 블록 이름 목록입니다.
+	# 바닐라 블록은 'blockid' 형식, 모드 블록은 'modid:blockid' 형식을 사용할 수 있습니다
+	blocklist = ["white_wool", "dirt", "grass_block"]
+	#활성화하면 '등반 발톱'으로 벽에 매달리거나 '점프 부츠'로 점프할 때 허기가 소모됩니다.
+	foodExhaustion = true
+
+#룸스케일 엎드리기 설정
+[crawling]
+	#VR 플레이어가 지면에 가깝게 자세를 낮춰 기어가는 상태로 들어갈 수 있도록 허용합니다. 비활성화해도 바닐라 기어가기는 막히지 않습니다.
+	enabled = true
+
+#순간이동 설정
+[teleport]
+	#VR 플레이어가 순간이동을 사용할 수 있도록 허용합니다. VR 멀미에 취약한 플레이어를 위해 이 설정은 활성화해 두는 것을 권장합니다.
+	# 이 설정을 비활성화하는 기능은 Vivecraft 1.3.0 이상 클라이언트에서만 작동합니다.
+	enabled = true
+	#서바이벌 모드에서 순간이동 범위와 빈도를 제한합니다.
+	limitedSurvival = false
+	#서바이벌 모드 플레이어가 위로 순간이동할 수 있는 최대 블록 수입니다. 0으로 설정하면 비활성화됩니다.
+	# default: 4, min: 1, max: 16
+	upLimit = 4
+	#서바이벌 모드 플레이어가 아래로 순간이동할 수 있는 최대 블록 수입니다. 0으로 설정하면 비활성화됩니다.
+	# default: 4, min: 1, max: 16
+	downLimit = 4
+	#서바이벌 모드 플레이어가 수평으로 순간이동할 수 있는 최대 블록 수입니다. 0으로 설정하면 비활성화됩니다.
+	# default: 16, min: 1, max: 32
+	horizontalLimit = 16
+	#활성화하면 블록 위로 텔레포트할 때 허기가 소모됩니다.
+	foodExhaustion = false
+
+#월드 스케일 설정
+[worldScale]
+	#플레이어가 사용할 수 있는 월드 스케일 범위를 제한합니다.
+	limitRange = false
+	#허용되는 월드 스케일 하한값
+	# default: 0.50, min: 0.10, max: 100.00
+	min = 0.5
+	#허용되는 월드 스케일 상한값
+	# default: 2.00, min: 0.10, max: 100.00
+	max = 2.0
+
+#기타 클라이언트 설정 재정의
+[settingOverrides]
+	#플레이어가 '원본 아이템 위치' 설정을 사용하도록 강제합니다
+	thirdPersonItems = false
+	#커스텀 모델 데이터/커스텀 아이템 모델을 가진 아이템에 한해, 플레이어가 '원본 아이템 위치' 설정을 사용하도록 강제합니다.
+	thirdPersonItemsCustom = false
+
+#VR 실시간 전환 설정
+[vrSwitching]
+	#플레이어가 즉시 VR과 비VR 사이를 전환할 수 있도록 허용합니다.
+	# 비활성화하면 접속 시 사용한 모드로 고정됩니다.
+	enabled = true
+
+#디버그 설정
+[debug]
+	#서버 VR 데이터 상태를 표시하기 위해 VR 플레이어의 기기 위치에 파티클을 생성합니다.
+	debugParticles = false
+	#서버 VR 데이터 상태를 표시하기 위해 VR 플레이어의 머리 위치에 파티클을 생성합니다.
+	debugParticlesHead = false
+

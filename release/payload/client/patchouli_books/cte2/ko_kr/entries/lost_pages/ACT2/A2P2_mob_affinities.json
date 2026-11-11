@@ -1,0 +1,16 @@
+{
+  "name": "몹 속성 친화력",
+  "icon": "minecraft:blaze_powder",
+  "category": "patchouli:A1lost_pages",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(c:/ftbquests open_book 3F61325EA08B6DAA)&c$(l)---> 퀘스트 페이지 열기 <--- $(/c)$(br)&r&e네더&r의 일부 몹이 더 많은 &c화염 피해&r를 주는 것을 눈치채셨나요? 특정 차원에 사는 몹은 특정 속성에 친화력을 가지는 경향이 있습니다. 예를 들어 네더에서는 일부 몹이 화염과 물리 피해를 함께 줍니다. &o또한, 이것이 그 몹이 친화력을 가진 속성의 피해를 덜 받는다는 뜻은 아니라는 점에 유의하십시오.&r"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "&n속성 친화력&r\n\n&l지상 세계:&r &7없음&r\n&l네더:&r &c화염&r\n&l지하정원:&r &5혼돈&r\n&l아쿠아미레(Aquamirae)&r 몹: &b얼음&r\n&l에버브라이트:&r &b얼음&r + &e번개&r\n&l에버돈:&r &c화염&r + &5혼돈&r\n&l엔드:&r &c화염&r + &e번개&r + &5혼돈&r\n&l저편:&r &5혼돈&r\n&l황혼의 숲:&r &7없음&r"
+    }
+  ]
+}

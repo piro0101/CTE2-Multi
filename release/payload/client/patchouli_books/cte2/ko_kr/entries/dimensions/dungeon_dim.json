@@ -1,0 +1,30 @@
+{
+  "name": "던전 차원",
+  "icon": "dungeon_realm:map_device",
+  "category": "patchouli:dimensions",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "&n&6&l차원:&r&r  &n&l던전&r\n&n&6&l구역 레벨:&r&r  &n&l플레이어에 맞춰 조정됨 &r&r\n$(br) 던전 차원은 여러분이 경험할 다른 모든 차원과 다르게 작동합니다. 이곳에서는 블록을 부수거나 놓을 수 없습니다. 이 차원에 접근하려면 특정한 &n&l&6지도&r를 지정된 &n&l&6지도 장치&r에 사용해서, 몬스터와 전리품이 가득한 무작위로 생성되는 던전에 들어가야 합니다."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "하비스트",
+      "item": "the_harvest:harvest,the_harvest:harvest_map",
+      "text": "하비스트는 정해진 타이머에 따라 하비스트 스포너에서 몹이 계속 생성되는 무작위 단일 아레나를 생성하는 던전 차원의 한 종류입니다. 특히 이 몹들은 특수한 제작용 화폐를 만드는 데 쓰이는 제작 재료를 드롭합니다."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "오벨리스크",
+      "item": "ancient_obelisks:obelisk,ancient_obelisks:obelisk_map",
+      "text": "오벨리스크는 무작위 수정자와 함께 파도 형태로 적이 몰려오는 무작위 단일 아레나를 생성하는 던전 차원의 한 종류입니다. 특히 오벨리스크 지도는 이 모드의 화폐로 수정하여 난이도와 보상을 크게 높일 수 있습니다. 도전할 각오가 되어 있다면 마음의 준비를 하세요."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "지도 장치",
+      "item": "dungeon_realm:dungeon_map,dungeon_realm:map_device",
+      "text": "지도는 적과 전리품이 가득한 무작위로 매칭된 방들을 생성하는 던전 차원의 한 종류입니다. 이는 CTE2의 주요 엔드게임 콘텐츠입니다."
+    }
+  ]
+}

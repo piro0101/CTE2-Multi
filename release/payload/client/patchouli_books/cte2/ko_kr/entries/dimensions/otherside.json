@@ -1,0 +1,59 @@
+{
+  "name": "아더사이드",
+  "icon": "minecraft:sculk",
+  "category": "patchouli:dimensions",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "&n&6&l차원:&r&r    &n&l아더사이드&r\n&n&6&l구역 레벨:&r&r    &n60 - 75 &r&r\n&n&6&l분노 상태 구역 레벨:&r &n75 - 95&r\n&n&6&l예외:&r  &n없음&r\n&n&6&l해당 퀘스트:&r  &n5막;&r\n&n&6&l차원 게이트웨이:&r  &n5막 게이트웨이;\n&n&6&l차원 보스:&r &n워든 &r "
+    },
+    {
+      "type": "patchouli:text",
+      "text": " 이 차원으로 이어지는 포탈은 지켜지고 있던 게 아니라 갑작스레 닫혀버린 듯합니다. 이곳엔 단순히 워든 한 마리 이상의 무언가가 있습니다. 마치 이 포탈이 그 '워든'이라는 생물들의 고향으로 이어지는 것처럼 보입니다. 이곳의 다른 모든 생물들도 청각과 반향정위에 의존하는 비슷한 특징을 지니고 있습니다.$(br) 전투를 감수할 각오가 되어 있지 않다면 소리를 내지 마세요.$(br) 덧붙이자면, 이 차원에는 어떤 고대 신전 같은 것도 있는 듯합니다."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "아더사이드로 가는 방법",
+      "item": "deeperdarker:heart_of_the_deep",
+      "text": "이 차원으로 가고 싶다면 워든에게서 드롭되는&n&l 심연의 심장을 손에 넣어 고대 도시에서 발견되는 포탈 프레임에 불을 밝혀야 합니다.&r$(br)때로는 스컬크로 뒤덮인 포탈 프레임을 발견할 수도 있는데, 포탈을 밝히기 전에 먼저 제거해야 합니다"
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "아더사이드 포탈",
+      "text": "이 포탈은 서바이벌에서 직접 만들 수 없으며, 시각화 기능으로 무언가 포탈을 막고 있는지 확인할 수 있습니다",
+      "multiblock": {
+        "pattern": [
+          [
+            "OOOOOOOOOOOOOOOOOOOOOO"
+          ],
+          [
+            "OSSSSSSSSSSSSSSSSSSSSO"
+          ],
+          [
+            "OSSSSSSSSSSSSSSSSSSSSO"
+          ],
+          [
+            "OSSSSSSSSSSSSSSSSSSSSO"
+          ],
+          [
+            "OSSSSSSSSSSSSSSSSSSSSO"
+          ],
+          [
+            "OSSSSSSSSSSSSSSSSSSSSO"
+          ],
+          [
+            "O0SSSSSSSSSSSSSSSSSSSO"
+          ],
+          [
+            "OOOOOOOOOOOOOOOOOOOOOO"
+          ]
+        ],
+        "mapping": {
+          "O": "minecraft:reinforced_deepslate",
+          "S": "minecraft:air"
+        }
+      }
+    }
+  ]
+}

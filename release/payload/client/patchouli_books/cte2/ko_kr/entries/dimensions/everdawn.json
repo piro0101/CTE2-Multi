@@ -1,0 +1,50 @@
+{
+  "name": "에버던",
+  "icon": "blue_skies:everdawn_portal",
+  "category": "patchouli:dimensions",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "&n&6&l차원:&r&r    &n&l에버던&r\n&n&6&l구역 레벨:&r&r    &n35 - 55 &r&r\n&n&6&l분노 상태 구역 레벨:&r &n65 - 85&r\n&n&6&l예외:&r  &n없음&r\n&n&6&l해당 퀘스트:&r  &n4막;&r\n&n&6&l차원 게이트웨이:&r  &n4막 게이트웨이;\n&n&6&l차원 보스:&r &n연금술사, 아라크나크  &r "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(br) 이 차원은 마치 해가 끊임없이 떠오르는 것처럼 보이지만, 항상 덥고 습합니다.$(br) 이 차원은 이 습도 속에서 번성하는 수많은 곤충들의 서식지입니다.$(br) 특히 비가 올 때 더 많은 곤충을 볼 수 있는데, 다행히도 이곳엔 가랑비만 살짝 내립니다. 이곳의 곤충들은 몸집이 훨씬 커져서, 일부는 저만큼이나 큽니다.$(br) 관문지기에게서 얻은 푸른 일기를 읽으면 훨씬 더 많은 정보를 얻을 수 있을 겁니다."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "에버던으로 가는 방법",
+      "item": "blue_skies:zeal_lighter,blue_skies:lunar_stonebrick",
+      "text": "이 차원으로 가고 싶다면&n&l 최소 10개의 달빛 석재 벽돌과 관문지기에게서 얻은 열정의 점화기를 구해야 합니다&r.\n  &o모서리 블록은 완전히 선택 사항이지만, 만약 그런 스탯이 존재한다면 &2미관 +5&r를 부여했을 겁니다"
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "에버던 포탈",
+      "text": "게임 내에서 포탈을 시각화하려면 눈 아이콘을 클릭하세요",
+      "multiblock": {
+        "pattern": [
+          [
+            "SOOS"
+          ],
+          [
+            "O  O"
+          ],
+          [
+            "O  O"
+          ],
+          [
+            "O 0O"
+          ],
+          [
+            "SOOS"
+          ]
+        ],
+        "mapping": {
+          "O": "blue_skies:lunar_stonebrick",
+          "S": "#minecraft:mineable/pickaxe"
+        }
+      }
+    }
+  ]
+}

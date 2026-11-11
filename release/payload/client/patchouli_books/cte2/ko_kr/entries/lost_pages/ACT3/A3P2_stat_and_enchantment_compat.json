@@ -1,0 +1,16 @@
+{
+  "name": "스탯과 인챈트 호환성",
+  "icon": "minecraft:enchanted_book",
+  "category": "patchouli:A1lost_pages",
+  "sortnum": 14,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(c:/ftbquests open_book 11DB53435CA1D59E)&c$(l)---> 퀘스트 페이지 열기 <--- $(/c)$(br)&rCTE2에서는 일부 바닐라 스탯이 Mine and Slash와 호환됩니다!\n바닐라 : &aMine and Slash&r\n체력 : &b마법 보호막 +0.5%&r\n방어력 : &b장비 방어력 +0.1%&r\n방어력 강인함 : &b장비 방어력 +0.1%&r\n공격 피해 : &b총 피해량 +0.5%&r\n행운 : &b마법 탐색 +3%&r\n또한, 인챈트 호환성도 포함되어 있습니다.\n"
+    },
+    {
+      "type": "patchouli:text",
+      "text": " 인챈트가 Mine and Slash 스탯에 어떻게 영향을 주는지는 &b파란색으로 표시된 인챈트 설명&r에서 확인할 수 있습니다.\n인챈트 스탯 보너스는 아이템당 (최대 인챈트 레벨 + 1)만큼으로 상한이 정해집니다. 예를 들어 보호 인챈트는 +2% 방어력을 주지만, 이 인챈트가 붙은 아이템 하나당 +12%까지만 받을 수 있습니다. 설령 보호 VIII 아이템을 어떻게든 얻더라도 마찬가지입니다. 다만 아이템 상한 x3에 해당하는 전역 상한도 존재합니다. 보호 VI 아이템을 4개 장착했다면, +36% 방어력만 받게 됩니다."
+    }
+  ]
+}

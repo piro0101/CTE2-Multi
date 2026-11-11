@@ -1,0 +1,16 @@
+{
+  "name": "바닐라가 아닌 인챈트",
+  "icon": "mmorpg:enchantment/family/armor/rare",
+  "category": "patchouli:A1lost_pages",
+  "sortnum": 14,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(c:/ftbquests open_book 256EB6DAF1808F35)&c$(l)---> 퀘스트 페이지 열기 <--- $(/c)$(br)&r일부 몹들 때문에 어려움을 겪고 계신가요? Mine and Slash의 &e주입 전문 기술&r을 사용해 스스로를 강화할 수 있습니다. &e주문서&r를 장비에 사용하면 &e유익한 스탯이 무작위로 적용&r됩니다. 이 스탯은 후속 주입 주문서를 사용해 업그레이드할 수 있습니다.\n"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "     이 시스템을 사용하는 방법에 대한 자세한 내용은 $(c:/ftbquests open_book 5B97985430859986)&c$(l)&eM&S 전문 기술 챕터$(/c)를 참고하십시오! 마찬가지로, 전문 기술 활동을 수행하면 &e휴식 전투 경험치&r를 받게 됩니다!\n\nMine and Slash 허브에서 전문 기술 아이콘 위에 마우스를 올리면 보유한 휴식 경험치를 확인할 수 있습니다."
+    }
+  ]
+}

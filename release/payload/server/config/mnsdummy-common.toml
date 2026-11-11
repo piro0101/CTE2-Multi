@@ -1,0 +1,31 @@
+
+#Mine and Slash Training Dummy
+[dummy]
+	#Seconds without a hit before the chat summary window ends.
+	#The panels keep accumulating until Reset DPS is pressed; this only decides
+	#how a burst is sliced up for the printed report.
+	#Range: 1 ~ 120
+	idle_reset_seconds = 5
+	#Render live DPS / total damage text above the dummy.
+	show_dps_above_dummy = true
+	#Blocks above the dummy's head the live readout floats at.
+	#The default clears Mine and Slash's own health bar, which sits 0.6 above the head;
+	#raise this if you changed Neat's "Height Above Mob" or run another nameplate mod.
+	#Range: 0.0 ~ 8.0
+	dps_text_height = 1.0
+	#Level a freshly placed dummy uses when no player level can be read. 0 = match the placing player.
+	#Range: 0 ~ 100
+	default_level = 0
+	#Let the dummy's return hit actually kill you.
+	#Off by default: the hit lands in full and is reported in full, but the health
+	#it takes is floored so you are left on 1 HP. Testing a pinnacle boss twenty
+	#levels above you is the whole point, and dying to it teaches you nothing the
+	#damage number had not already said.
+	attack_can_kill = false
+	#Ticks between hits while the dummy's Auto attack is switched on.
+	#The floor is 10 for a reason: vanilla gives a hurt entity 10 ticks of
+	#invulnerability, during which a second hit only lands the part of itself that
+	#exceeds the first. Below 20 the numbers stop being one clean hit each.
+	#Range: 10 ~ 200
+	auto_attack_interval_ticks = 20
+

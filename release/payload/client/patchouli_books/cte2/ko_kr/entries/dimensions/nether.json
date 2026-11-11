@@ -1,0 +1,50 @@
+{
+  "name": "네더",
+  "icon": "minecraft:magma_block",
+  "category": "patchouli:dimensions",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "&n&6&l차원:&r&r    &n&l네더&r\n&n&6&l구역 레벨:&r&r    &n10 - 30 &r&r\n&n&6&l분노 상태 구역 레벨:&r &n55 - 75&r\n&n&6&l예외:&r  &n없음&r\n&n&6&l해당 퀘스트:&r  &n2막;&r\n&n&6&l차원 게이트웨이:&r  &n2막 게이트웨이;\n&n&6&l차원 보스:&r &n뒤틀린 모스코, 야생불, 어미 용암 오징어, 위더, 역겨운 가스트, 네더 수호자&r "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "흔히 '지옥'이라 불리는 차원입니다. 말 그대로 뜨거운 휴양지가 될 법한 곳이죠. 이 차원은 용암으로 가득 차 있고 이동하기 어려우므로, 어떤 형태로든 화염 저항 수단을 갖추는 것을 강력히 권장합니다. 패러글라이더도 여기서는 큰 도움이 될 겁니다. 이 차원에는 이상한 자기 간섭이 있어서 킵핑 성이나 어썰 던전 같은 일부 구조물은 구조물 나침반으로 찾을 수가 없습니다. 하지만 일부 모험가들은 그것들이 승천에 도움을 줄 수 있다고 추측하고 있습니다."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "네더로 가는 방법",
+      "item": "minecraft:obsidian,minecraft:flint_and_steel,minecraft:fire_charge",
+      "text": "이 차원으로 가고 싶다면&n&l 최소 10개의 흑요석 블록과 부싯돌과 부시 또는 화염구 같은 발화 수단을 구해 포탈 프레임 중앙에 불을 붙여야 합니다&r.\n  &o모서리 블록은 완전히 선택 사항이지만, 만약 그런 스탯이 존재한다면 &2미관 +5&r를 부여했을 겁니다"
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "네더 포탈",
+      "text": "게임 내에서 포탈을 시각화하려면 눈 아이콘을 클릭하세요",
+      "multiblock": {
+        "pattern": [
+          [
+            "SOOS"
+          ],
+          [
+            "O  O"
+          ],
+          [
+            "O  O"
+          ],
+          [
+            "O 0O"
+          ],
+          [
+            "SOOS"
+          ]
+        ],
+        "mapping": {
+          "O": "minecraft:obsidian",
+          "S": "#minecraft:mineable/pickaxe"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "퀘스트 모양",
+  "icon": "mmorpg:gems/emerald/6",
+  "category": "patchouli:A1lost_pages",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(c:/ftbquests open_book 051DB401E3A08D89)&c$(l)---> 퀘스트 페이지 열기 <--- $(/c)$(br)&r&e캠페인&r 퀘스트 라인에서는, 여러 퀘스트가 서로 다른 배경 모양을 가지고 있어 어떤 종류의 퀘스트인지 나타냅니다.$(br)\n\n또한, 종이 아이콘을 가진 &e'잃어버린 페이지'&r도 찾을 수 있습니다. 이것들은 클릭 한 번으로 완료할 수 있는 간단한 퀘스트로, 추가 정보를 제공합니다. \n"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "\n&a모서리가 둥근 정사각형: 메인 퀘스트&r$(br)\n&e원: 사이드 퀘스트&r$(br)\n&3톱니바퀴: 반복 가능한 퀘스트&r$(br)\n&4다이아몬드: 미니 보스&r$(br)\n&d팔각형: 상점&r$(br)\n&b육각형: 업적&r$(br)\n"
+    }
+  ]
+}

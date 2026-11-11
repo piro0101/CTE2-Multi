@@ -1,0 +1,49 @@
+{
+  "name": "정교한 저장소",
+  "icon": "sophisticatedstorage:limited_iron_barrel_1",
+  "category": "patchouli:storage",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "정교한 배낭",
+      "item": "sophisticatedstorage:iron_chest,sophisticatedstorage:gold_chest,sophisticatedstorage:copper_chest,sophisticatedstorage:diamond_chest,sophisticatedstorage:netherite_chest,sophisticatedstorage:chest",
+      "text": "&e&e정교한 저장소&r는 정교한 배낭의 동반 모드입니다. 상자와 배럴은 철, 금, 다이아몬드, 네더라이트 순으로 업그레이드할 수 있으며, 업그레이드할수록 아이템 슬롯과 업그레이드 슬롯이 늘어납니다.\n바닐라 상자와 배럴은 기본 등급 강화를 사용해 정교한 저장소의 상자/배럴로 업그레이드할 수 있습니다.\n\n"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "보관함의 등급이 높을수록 업그레이드 슬롯과 인벤토리 공간이 늘어납니다.\n&e일반 상자:&r 27칸, 업그레이드 슬롯 1개\n\n&e철 상자:&r 54칸, 업그레이드 슬롯 2개\n\n&e금 상자:&r 81칸, 업그레이드 슬롯 3개\n\n&e다이아몬드 상자:&r 108칸, 업그레이드 슬롯 4개\n\n&e네더라이트 상자: &r120칸, 업그레이드 슬롯 5개"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "세트 업그레이드",
+      "item": "sophisticatedstorage:stack_upgrade_tier_1,sophisticatedstorage:stack_upgrade_tier_2,sophisticatedstorage:crafting_upgrade,sophisticatedstorage:smelting_upgrade",
+      "text": "&e세트 업그레이드&r는 매우 중요합니다. 보관함 안에 두 개 이상 들어있으면 세트 업그레이드끼리 중첩 적용됩니다.\n"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "\n예를 들면:\n&e4단계 세트 업그레이드 1개&r: 1024\n\n&e4단계 세트 업그레이드 2개:&r 16,384\n\n&e4단계 세트 업그레이드:&r 262,144\n\n&e4단계 세트 업그레이드 4개: &r4,194,304\n\n이전 최대값에 16을 곱하면 다음 최대값이 되며, 슬롯은 총 7개까지 늘어날 수 있습니다."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "제한 배럴",
+      "item": "sophisticatedstorage:limited_barrel_2,sophisticatedstorage:limited_iron_barrel_2,sophisticatedstorage:limited_barrel_1,sophisticatedstorage:limited_iron_barrel_1",
+      "text": "&e제한 배럴&r은 서랍처럼 동작하며, 최대 &e4종류의 아이템&r을 보관할 수 있고 기본적으로 &e매우 높은 스택 한도&r를 가집니다. 배럴은 &e등급&r과 &e아이템 종류 제한&r 두 가지로 구분됩니다."
+    },
+    {
+      "type": "patchouli:text",
+      "title": " ",
+      "text": "&e일반, 철, 금, 다이아몬드, 네더라이트&r는 스택 한도를 결정하는 등급입니다.\n\n&eI, II, III, IIII&r는 아이템 종류 제한으로, 1개에서 4개까지 서로 다른 종류의 아이템을 넣을 수 있는지를 나타냅니다. 아이템 종류 제한이 높을수록 최대 스택 수는 줄어듭니다.\n\n이 배럴들도 일반 보관함과 마찬가지로 업그레이드할 수 있습니다.\n"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "저장소 컨트롤러",
+      "item": "sophisticatedstorage:controller,sophisticatedstorage:storage_link,sophisticatedstorage:storage_tool,sophisticatedstorage:packing_tape",
+      "text": "&e저장소 컨트롤러&r는 연결된 저장 블록과 아이템을 &e입출력&r할 수 있게 해줍니다. 우선순위는 어떤 저장 블록이 가장 나중에 설치되었는지에 따라 결정됩니다. 현재는 GUI가 없습니다.\n&e저장소 링크&r는 컨트롤러나 그에 연결된 다른 블록에 연결되지 않은 &e여러 저장소를 서로 연결&r할 수 있게 해줍니다."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "&e저장소 도구&r를 사용하면 &e잠금 연결, 잠금 설정, 잠금 및 아이템 수 보이게/안 보이게 하기&r를 할 수 있습니다. Shift 스크롤로 모드를 바꿀 수 있습니다. 연결은 컨트롤러를 우클릭해 연결을 시작한 뒤, 연결하고 싶은 저장소나 저장소 연결기를 우클릭하면 됩니다.\n\n&e포장 테이프&r를 사용하면 저장 블록을 &e포장&r할 수 있으며, 이렇게 하면 채굴했을 때 아이템이 쏟아지지 않고 일반 블록처럼 그대로 주울 수 있습니다."
+    }
+  ]
+}

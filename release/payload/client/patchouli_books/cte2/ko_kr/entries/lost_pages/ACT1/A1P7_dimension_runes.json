@@ -1,0 +1,47 @@
+{
+  "name": "차원 룬",
+  "icon": "mmorpg:runes/net",
+  "category": "patchouli:A1lost_pages",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(c:/ftbquests open_book 2C9B55C8C05E20E2)&c$(l)---> 퀘스트 페이지 열기 <--- $(/c)$(br)&rCraft to Exile 2에는 장비에 장착하거나 강력한 룬워드를 제작하는 데 사용할 수 있는 &e차원 전용 룬&r이 존재합니다.$(br)이 룬은 총 &e7종류&r이며, 혼령술사나 엔드 드래곤 같은 차원 보스에게서만 얻을 수 있습니다.\n"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:mmorpg:runes,mmorpg:runes/owd",
+      "text": "&eOwd 룬&r $(2br) 심연 은둔자 (&b5%&r),$(br) 혼령술사 (&b10%&r),$(br) 서리괴물 (&b15%&r),$(br) 사신 (&b10%&r)$(br)"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:mmorpg:runes,mmorpg:runes/net",
+      "text": "&&eNet 룬&r $(2br) 뒤틀린 모스코 (&b10%&r),$(br) 야생불 (&b5%&r),$(br) 어미 용암 오징어 (&b5%&r),$(br) 위더 (&b10%&r),$(br) 역겨운 가스트 (&b15%&r),$(br) 네더 수호자 (&b15%&r)"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:mmorpg:runes,mmorpg:runes/und",
+      "text": "&eUnd 룬&r $(2br) 강철의 기사 (&b10%&r),$(br) 움부티 (&b10%&r),$(br) 조각가 통비 (&b10%&r),$(br) 잊혀진 가디언 (&b10%&r),$(br) 뱀장어 (&b15%&r),$(br) 미로의 어머니 (&b50%&r),$(br) 코넬리아 선장의 유령 (&b10%&r)$(br)"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:mmorpg:runes,mmorpg:runes/bri",
+      "text": "&eBri 룬&r $(2br) 소환사 (&b10%&r),$(br) 별빛 으스러트리 (&b25%&r)$(br)"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:mmorpg:runes,mmorpg:runes/daw",
+      "text": "&eDaw 룬&r $(2br) 연금술사 (&b10%&r),$(br) 아라크나크 (&b25%&r)$(br)"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:mmorpg:runes,mmorpg:runes/end",
+      "text": "&eEnd 룬&r $(2br) 엔더 드래곤 (&b7.5%&r),$(br) 공허 벌레 (&b5%&r),$(br)쉘터러 (&b15%&r)"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:mmorpg:runes,mmorpg:runes/sid",
+      "text": "&eSid 룬&r $(2br) 워든 (&b10%&r), 밤의 리치 (&b15%&r),$(br) 네더 건틀릿 (&b15%&r),$(br) 공허의 꽃 (&b15%&r),$(br) 옵시딜리스 (&b15%&r)$(br)"
+    }
+  ]
+}

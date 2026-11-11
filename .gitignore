@@ -1,0 +1,8 @@
+dist/
+dev/
+__pycache__/
+*.log
+*.user
+*.tmp
+.env*
+.cte2-patcher/

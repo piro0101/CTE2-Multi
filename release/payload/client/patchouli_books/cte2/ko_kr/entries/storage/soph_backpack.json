@@ -1,0 +1,39 @@
+{
+  "name": "정교한 배낭",
+  "icon": "sophisticatedbackpacks:backpack",
+  "category": "patchouli:storage",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "title": "정교한 배낭",
+      "item": "sophisticatedbackpacks:backpack,sophisticatedbackpacks:iron_backpack,sophisticatedbackpacks:gold_backpack,sophisticatedbackpacks:diamond_backpack,sophisticatedbackpacks:netherite_backpack",
+      "text": "&e정교한 배낭&r은 배낭으로 원하는 거의 모든 것을 허용합니다. 자동 급식, 가방 안에서 제작 및 화로 사용, 유체와 경험치를 유체 형태로 운반하는 등 수많은 강화가 있습니다. 전체 강화 목록은 JEI에서 확인하세요.\n\n"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "배낭의 등급이 높을수록 업그레이드 슬롯과 인벤토리 공간이 늘어납니다.\n\n&e배낭: &r27칸, 업그레이드 슬롯 1개\n&e철 배낭:&r 54칸, 업그레이드 슬롯 2개\n&e금 배낭:&r 81칸, 업그레이드 슬롯 3개\n&e다이아몬드 배낭:&r 108칸, 업그레이드 슬롯 5개\n&e네더라이트 배낭:&r 120칸, 업그레이드 슬롯 7개"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "세트 업그레이드",
+      "item": "sophisticatedbackpacks:stack_upgrade_starter_tier,sophisticatedbackpacks:stack_upgrade_tier_1,sophisticatedbackpacks:stack_upgrade_tier_2,sophisticatedbackpacks:stack_upgrade_tier_3,sophisticatedbackpacks:stack_upgrade_tier_4,sophisticatedbackpacks:stack_upgrade_omega_tier",
+      "text": "&e세트 업그레이드&r는 매우 중요합니다. 가방 안에 두 개 이상 들어있으면 세트 업그레이드끼리 중첩 적용됩니다.\n\n\n"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "\n예를 들면:\n&e4단계 세트 업그레이드 1개&r: 1024\n\n&e4단계 세트 업그레이드 2개:&r 16,384\n\n&e4단계 세트 업그레이드 3개:&r 262,144\n\n블랙홀이 생기는 것을 막기 위해, 배낭 하나당 세트 업그레이드는 3개까지만 장착할 수 있습니다."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "고급 강화",
+      "item": "sophisticatedbackpacks:advanced_pickup_upgrade,sophisticatedbackpacks:advanced_feeding_upgrade,sophisticatedbackpacks:advanced_void_upgrade",
+      "text": "&e고급 강화&r는 가방 속 강화의 동작에 대해 더욱 &e세밀한 필터링&r과 제어를 허용합니다. 예를 들어 고급 줍기 기능은 화이트리스트에 있는 아이템만 줍거나, 블랙리스트에 있는 아이템은 줍지 않거나, 이미 가방 안에 있는 것과 일치하는 아이템만 줍도록 설정할 수 있습니다.\n"
+    },
+    {
+      "type": "patchouli:text",
+      "title": " ",
+      "text": "\n  \n  \n  \n  강화 전체 목록은 &eJEI&r를 확인하세요.\n"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "소환 계열 직업",
+  "icon": "mmorpg:mob_effects/fire_golem_buff",
+  "category": "patchouli:A1lost_pages",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(c:/ftbquests open_book 5DA2E0EE110431E0)&c$(l)---> 퀘스트 페이지 열기 <--- $(/c)$(br)&r&5흑마법사&r, &2사냥꾼&r, 또는 &9정령술사&r로 플레이하고 계신가요? 이 직업들이 소환수를 사용할 수 있다는 사실을 알고 계셨나요?$(br)Mine and Slash 허브(왼쪽 아래)의 &e특징(Features)&r 탭에서 &e소환수 행동 방식&r을 설정할 수 있습니다. 공격적으로 만들 수도, 소극적으로 만들 수도 있습니다.  \n"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "소극적으로 설정하면, 소환수는 당신이 공격한 대상만 공격합니다.$(br)또한, 소환 해제 단축키(기본값: &e  $(k:mmorpg.key.unsummon)&r)를 사용하면 언제든지 소환수를 &e소환 해제&r할 수 있습니다!"
+    }
+  ]
+}

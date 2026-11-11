@@ -1,0 +1,16 @@
+{
+  "name": "탈것",
+  "icon": "blue_skies:camel_saddle",
+  "category": "patchouli:A1lost_pages",
+  "sortnum": 18,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(c:/ftbquests open_book 5145DB1D393B6681)&c$(l)---> 퀘스트 페이지 열기 <--- $(/c)$(br)&r&e에버브라이트와 에버돈 차원에서는 &e새로운 길들일 수 있는 생물과 새로운 탈것 후보&r를 만날 수 있습니다.\n\n&e순록&r, &e낙타&r, 혹은 &e코스믹 폭스&r를 찾는 것도 재미있을 것입니다."
+    },
+    {
+      "type": "patchouli:text",
+      "text": ""
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+name: Build and publish CTE2 patch
+on:
+  push:
+    branches: [main]
+    paths: ['src/**', 'tests/**', 'build.ps1', 'package_release.py', 'release/**', '.github/workflows/release.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cte2-release
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile patcher and test installation engine
+        shell: powershell
+        run: ./build.ps1
+      - name: Build matching player and server payloads
+        shell: powershell
+        run: |
+          $tag = 'patch-' + $env:GITHUB_RUN_NUMBER
+          python package_release.py --release-id $tag --tag $tag
+          if ($LASTEXITCODE -ne 0) { throw 'Package validation failed' }
+      - name: Publish complete release
+        shell: powershell
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = 'patch-' + $env:GITHUB_RUN_NUMBER
+          gh release create $tag dist/CTE2-Patcher.exe dist/release/update.json dist/release/patch-client.zip dist/release/patch-server.zip --repo $env:GITHUB_REPOSITORY --target $env:GITHUB_SHA --title "CTE2 $tag" --notes-file release/notes.md --latest
+          if ($LASTEXITCODE -ne 0) { throw 'Release publication failed' }

@@ -1,0 +1,16 @@
+{
+  "name": "태초의 악",
+  "icon": "bosses_of_mass_destruction:ancient_anima",
+  "category": "patchouli:A1lost_pages",
+  "sortnum": 20,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(c:/ftbquests open_book 749D138B0222E744)&c$(l)---> 퀘스트 페이지 열기 <--- $(/c)$(br)&r마침내... 여러 모험을 거치며 남긴 당신의 기록이 &e저편(The Otherside)&r으로 당신을 이끌었습니다.\n\n&e지상 세계&r에서의 소박한 시작으로부터, &e네더&r와 &e지저 세계(Underdark)&r를 거치는 위험한 여정, &e에버브라이트와 에버돈&r에서의 조우, 그리고 &e엔드&r에서의 아슬아슬한 고비를 지나, 이제 당신은 이 모든 악의 근원이라 믿는 곳에 도달했습니다."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "그 마을의 연구자가 이걸 뭐라고 불렀더라? &b태초의 거신들&r 사이의 '다툼'? 그 연구자의 말에 따르면, &e엔드&r와 &e저편&r에서 발견되는 네 원소 생명체만 제거하면 충분할 것이라 합니다.\n\n이제 마지막 퀘스트에 나설 준비를 하십시오! 그것들을 처치하고 나면 다시는 돌아오지 않겠죠, 그렇죠..?"
+    }
+  ]
+}

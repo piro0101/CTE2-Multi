@@ -1,0 +1,16 @@
+{
+  "name": "잠깐의 휴식",
+  "icon": "mmorpg:currency/harvest_essence_1",
+  "category": "patchouli:A1lost_pages",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(c:/ftbquests open_book 256EB6DAF1808F35)&c$(l)---> 퀘스트 페이지 열기 <--- $(/c)$(br)&rMine and Slash 전문 기술은 레벨을 올리기가 지루할 때가 있습니다... 전투로 경험치를 얻으면 &e휴식 전문 기술 경험치&r도 함께 얻는다는 사실을 알고 계셨나요? 이 경험치는 쌓여 있다가, 전문 기술 활동을 수행할 때 소모되어 획득 경험치를 늘려줍니다.\n\n"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "마찬가지로, 전문 기술 활동을 수행하면 &e휴식 전투 경험치&r를 받게 됩니다!\n\nMine and Slash 허브에서 전문 기술 아이콘 위에 마우스를 올리면 보유한 휴식 경험치를 확인할 수 있습니다."
+    }
+  ]
+}

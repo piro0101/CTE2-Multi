@@ -1,0 +1,17 @@
+{
+  "name": "기록의 책",
+  "icon": "mmorpg:omen",
+  "category": "patchouli:A1lost_pages",
+  "sortnum": 18,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(c:/ftbquests open_book 65FD2E8334B1DF1C)&c$(l)---> 퀘스트 페이지 열기 <--- $(/c)$(br)&r&e코덱스&r는 장착할 수 있는 액세서리/장비 아이템으로, 50레벨부터 드롭되기 시작합니다. &e코덱스&r는 장착한 장비의 다양성에 따라 플레이어에게 강력한 스탯을 제공합니다.\n\n하단에는 요구 조건이 나열되어 있으며, 예를 들어 &c유니크&r 2개, 일반 장비(&7일반&r -> &5신화&r) 1개, &e룬워드&r 2개를 장착하는 것 등이 있습니다.\n\n"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "mmorpg:omen",
+      "text": " 이러한 조건을 몇 개나 장착했는지에 따라 &e코덱스&r는 더 많은 스탯을 제공하며, 이는 툴팁에서 확인할 수 있습니다."
+    }
+  ]
+}
