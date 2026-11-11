@@ -129,7 +129,7 @@ namespace Cte2Patcher {
     public class MainWindow:Form {
         TextBox folder=new TextBox(),launcher=new TextBox(),log=new TextBox();ComboBox profile=new ComboBox();CheckBox korean=new CheckBox();Button update=new Button(),play=new Button();Label state=new Label();Preferences prefs;string preferenceFile;
         public MainWindow(){
-            Text="CTE2 패치기 · "+Engine.Version;ClientSize=new Size(760,620);MinimumSize=new Size(700,590);StartPosition=FormStartPosition.CenterScreen;Font=new Font("맑은 고딕",10);BackColor=Color.FromArgb(17,25,39);ForeColor=Color.White;
+            Text="CTE2 패치기 · "+Engine.Version;AutoScaleMode=AutoScaleMode.Dpi;ClientSize=new Size(760,620);MinimumSize=new Size(776,659);StartPosition=FormStartPosition.CenterScreen;Font=new Font("맑은 고딕",10);BackColor=Color.FromArgb(17,25,39);ForeColor=Color.White;
             Controls.Add(new Label{Text="CTE2 서버 패치",Font=new Font(Font.FontFamily,23,FontStyle.Bold),Location=new Point(24,20),AutoSize=true});Controls.Add(new Label{Text="최신 버전을 확인하고 업데이트한 뒤 게임을 시작하세요.",Location=new Point(27,68),AutoSize=true,ForeColor=Color.LightSteelBlue});
             Controls.Add(new Label{Text="게임 폴더",Location=new Point(24,110),AutoSize=true});folder.SetBounds(24,135,602,28);Controls.Add(folder);var browse=new Button{Text="폴더 선택",Location=new Point(634,134),Size=new Size(100,30)};browse.Click+=(s,e)=>{using(var d=new FolderBrowserDialog{Description="CTE2 2.1.4의 mods 폴더가 보이는 게임 폴더를 선택하세요."})if(d.ShowDialog()==DialogResult.OK)folder.Text=d.SelectedPath;};Controls.Add(browse);
             Controls.Add(new Label{Text="연결할 런처 실행 파일",Location=new Point(24,179),AutoSize=true});launcher.SetBounds(24,204,602,28);Controls.Add(launcher);var choose=new Button{Text="런처 선택",Location=new Point(634,203),Size=new Size(100,30)};choose.Click+=(s,e)=>{using(var d=new OpenFileDialog{Filter="실행 파일 (*.exe)|*.exe",Title="GDLauncher 또는 사용 중인 런처를 선택하세요."})if(d.ShowDialog()==DialogResult.OK)launcher.Text=d.FileName;};Controls.Add(choose);
@@ -139,18 +139,23 @@ namespace Cte2Patcher {
             state.Text="게임과 서버를 완전히 종료한 뒤 업데이트하세요.";state.SetBounds(24,351,710,28);Controls.Add(state);log.SetBounds(24,387,710,200);log.Multiline=true;log.ReadOnly=true;log.ScrollBars=ScrollBars.Vertical;log.BackColor=Color.FromArgb(9,15,25);log.ForeColor=Color.LightSteelBlue;log.Anchor=AnchorStyles.Top|AnchorStyles.Bottom|AnchorStyles.Left|AnchorStyles.Right;Controls.Add(log);
             preferenceFile=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"CTE2-Patcher","preferences.json");try{prefs=Engine.Json.Deserialize<Preferences>(File.ReadAllText(preferenceFile,Encoding.UTF8));folder.Text=prefs.folder;launcher.Text=prefs.launcher;korean.Checked=prefs.korean;profile.SelectedIndex=prefs.profile=="server"?1:0;}catch{prefs=new Preferences();}
             if(folder.Text.Length==0){string gd=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"gdlauncher_carbon","data","instances");if(Directory.Exists(gd))folder.Text=gd;}
+            foreach(var button in Controls.OfType<Button>()){button.FlatStyle=FlatStyle.Flat;button.UseVisualStyleBackColor=false;if(button!=update){button.BackColor=Color.FromArgb(46,64,84);button.ForeColor=Color.White;}}
+            foreach(var box in new[]{folder,launcher}){box.BackColor=Color.FromArgb(28,40,58);box.ForeColor=Color.White;}
+            profile.BackColor=Color.FromArgb(28,40,58);profile.ForeColor=Color.White;
+            profile.SelectedIndexChanged+=(s,e)=>{korean.Enabled=profile.SelectedIndex==0;play.Enabled=profile.SelectedIndex==0;};korean.Enabled=play.Enabled=profile.SelectedIndex==0;
             FormClosing+=(s,e)=>{if(!update.Enabled){e.Cancel=true;state.Text="파일 적용 중에는 종료할 수 없습니다. 완료될 때까지 기다려 주세요.";}};
         }
         void Log(string text){if(InvokeRequired){BeginInvoke(new Action<string>(Log),text);return;}log.AppendText(text+Environment.NewLine);}
+        void Busy(bool busy){foreach(var button in Controls.OfType<Button>())button.Enabled=!busy&&(button!=play||profile.SelectedIndex==0);folder.Enabled=launcher.Enabled=profile.Enabled=!busy;korean.Enabled=!busy&&profile.SelectedIndex==0;}
         async Task Run(bool launch){
-            update.Enabled=play.Enabled=false;try{
+            Busy(true);try{
                 string root=Engine.NormalizeFolder(folder.Text),role=profile.SelectedIndex==0?"client":"server";folder.Text=root;
                 if(launch&&(role!="client"||!File.Exists(launcher.Text)||!launcher.Text.EndsWith(".exe",StringComparison.OrdinalIgnoreCase)))throw new IOException("플레이어용을 선택하고 사용할 런처 실행 파일을 먼저 지정하세요.");
                 state.Text="최신 패치를 확인하고 있습니다…";var latest=await Engine.Latest();Log("최신 패치: "+latest.release_id);Log(latest.notes??"");
                 await Engine.Apply(root,latest,role,korean.Checked,Log);state.Text="최신 패치가 적용되었습니다.";
                 prefs=new Preferences{folder=root,launcher=launcher.Text,korean=korean.Checked,profile=role};Directory.CreateDirectory(Path.GetDirectoryName(preferenceFile));File.WriteAllText(preferenceFile,Engine.Json.Serialize(prefs),Encoding.UTF8);
                 if(launch){state.Text="최신 패치 확인 완료 · 연결된 런처를 실행합니다.";Process.Start(new ProcessStartInfo(launcher.Text){UseShellExecute=true});}
-            }catch(Exception e){state.Text="중단됨 · "+e.Message;Log(e.ToString());MessageBox.Show(this,e.Message,"패치를 완료하지 못했습니다",MessageBoxButtons.OK,MessageBoxIcon.Information);}finally{update.Enabled=play.Enabled=true;}
+            }catch(Exception e){state.Text="중단됨 · "+e.Message;Log(e.ToString());MessageBox.Show(this,e.Message,"패치를 완료하지 못했습니다",MessageBoxButtons.OK,MessageBoxIcon.Information);}finally{Busy(false);}
         }
     }
     static class Program {
