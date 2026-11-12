@@ -73,6 +73,12 @@ def build(release_id, tag):
         assert endgame_config == challenge_raw, 'Client/server endgame defaults differ'
         with zipfile.ZipFile(io.BytesIO(data[ADDON])) as core:
             assert 'kr/cte2/multi/endgame/Challenges.class' in core.namelist()
+            assert 'kr/cte2/multi/endgame/ChallengeMaps.class' in core.namelist()
+            assert 'kr/cte2/multi/mixin/ChallengeMapDeviceMixin.class' in core.namelist()
+            assert 'kr/cte2/multi/mixin/ChallengeMapActionsMixin.class' in core.namelist()
+            assert core.read('assets/cte2_multiplayer/textures/item/ascended_map_upgrade.png').startswith(b'\x89PNG\r\n\x1a\n')
+            assert 'assets/cte2_multiplayer/models/item/ascended_map_upgrade.json' in core.namelist()
+            assert sum(n.startswith('assets/cte2_multiplayer/models/item/challenge_map_') for n in core.namelist()) == 7
             dimension = json.loads(core.read('data/cte2_multiplayer/dimension/endgame.json'))
             assert dimension['generator']['type'] == 'minecraft:flat' and dimension['generator']['settings']['layers'] == []
             assert not any('smoke' in n.lower() for n in core.namelist()), 'Test server code must not be distributed'

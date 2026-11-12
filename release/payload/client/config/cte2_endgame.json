@@ -21,5 +21,12 @@
   "nativeCopper": 200,
   "weeklyBonusBossPoints": 50,
   "mechanicDamage": 2500.0,
+  "raidMapBronze": 512,
+  "raidMapNativeCopper": 64,
+  "soloMapBronze": 256,
+  "soloMapNativeCopper": 32,
+  "speedMapBronze": 128,
+  "speedMapNativeCopper": 16,
+  "_입장권": "4인 보스/개인/스피드런 지도 구매 시 CTE 청동화 환산 + 원본 구리 환산을 함께 냅니다. 초월정점 지도는 미사용 정점 지도에 검은 강화 오브로 제작합니다. 전용 지도는 고정 전장 조건입니다.",
   "_보상": "보스 포인트·원본 동전은 완료 시 수령함에 보관합니다. 재도전 가능, 같은 콘텐츠 보상에는 계정별 대기시간 적용. 순위 보상으로 전투 능력치를 추가하지 않습니다."
 }
