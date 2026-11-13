@@ -1,6 +1,6 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CTE2 최종 도전 공략</title><meta name="description" content="초월정점, 4인 공략 보스, 개인시련 10단계, 지도 시련 스피드런의 한국어 공략과 운영 안내"><style>
     :root{color-scheme:dark}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#101820;color:#e4ece8;font:16px/1.85 system-ui,-apple-system,'Malgun Gothic',sans-serif}header,main,footer{max-width:1100px;margin:auto;padding:24px}header{display:flex;justify-content:space-between;border-bottom:1px solid #40544b}a{color:#f0dca2;text-underline-offset:4px}h1{color:#f0dca2;font-size:clamp(28px,4vw,44px);line-height:1.35;margin:35px 0 20px}h2{color:#d7e9db;border-top:1px solid #40544b;padding-top:30px;margin-top:45px;scroll-margin-top:20px}p,li{max-width:88ch}li{margin:10px 0}nav{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}nav a{padding:6px 12px;border:1px solid #506650;border-radius:4px}code{font-size:.91em;background:#233039;color:#f3dfad;padding:2px 5px;border-radius:3px;overflow-wrap:anywhere}.table{overflow-x:auto;margin:24px 0}table{border-collapse:collapse;width:100%;min-width:620px;background:#18252c}th,td{text-align:left;border:1px solid #465b56;padding:12px 14px;vertical-align:top}th{color:#f0dca2;background:#21352f}footer{border-top:1px solid #40544b;color:#a5b9ad;font-size:14px}.badge{display:inline-block;border:1px solid #b79a5b;color:#f0dca2;padding:3px 10px;border-radius:3px}@media(max-width:640px){header,main,footer{padding:18px}header{font-size:14px;gap:18px}h2{font-size:22px}}
-    </style></head><body><header><a href="../">CTE2 자료실</a><a href="https://github.com/piro0101/CTE2-Multi#readme">설치 · 업데이트</a></header><main><span class="badge">게임 수정본 0.4.0 · 플레이테스트</span><h1>CTE2 최종 도전 0.4.0 · 첫 플레이테스트</h1><img src="./ascended-map-upgrade.png" width="80" height="80" alt="초월정점 지도 강화 오브" style="image-rendering:pixelated"><p>검은 강화 오브 + 미사용 정점 지도 → 초월정점 지도 → 원래 지도 장치 입장</p><nav aria-label="목차"><a href="#section-1">처음 시작하기</a><a href="#section-2">도전 안내인 배치</a><a href="#section-3">표시와 규칙</a><a href="#section-4">보상과 기록</a><a href="#section-5">운영 설정</a><a href="#section-6">검증 범위와 오픈 전 확인</a></nav><p><strong>전용 도전 지도를 원래 모험 지도 장치에 넣어 입장합니다.</strong> 도전 안내인은 지도·오브 교환, 공략 안내, 기록·보상함을 제공합니다. <code>/cte endgame</code>도 안내 화면만 열며 입장권 없이 대기실을 만들 수 없습니다. 클라이언트와 서버 모두 같은 게임 패치를 사용하고 서버를 재시작하세요.</p>
+    </style></head><body><header><a href="../">CTE2 자료실</a><a href="https://github.com/piro0101/CTE2-Multi#readme">설치 · 업데이트</a></header><main><span class="badge">게임 수정본 0.4.1 · 플레이테스트</span><h1>CTE2 최종 도전 0.4.1 · 첫 플레이테스트</h1><img src="./ascended-map-upgrade.png" width="80" height="80" alt="초월정점 지도 강화 오브" style="image-rendering:pixelated"><p>검은 강화 오브 + 미사용 정점 지도 → 초월정점 지도 → 원래 지도 장치 입장</p><nav aria-label="목차"><a href="#section-1">처음 시작하기</a><a href="#section-2">도전 안내인 배치</a><a href="#section-3">표시와 규칙</a><a href="#section-4">보상과 기록</a><a href="#section-5">운영 설정</a><a href="#section-6">검증 범위와 오픈 전 확인</a></nav><p><strong>전용 도전 지도를 원래 모험 지도 장치에 넣어 입장합니다.</strong> 도전 안내인은 지도·오브 교환, 공략 안내, 기록·보상함을 제공합니다. <code>/cte endgame</code>도 안내 화면만 열며 입장권 없이 대기실을 만들 수 없습니다. 클라이언트와 서버 모두 같은 게임 패치를 사용하고 서버를 재시작하세요.</p>
 <h2 id="section-1">처음 시작하기</h2>
 <p>기본 입장 조건은 캐릭터 100레벨과 정점 보스 완료입니다. 업데이트 후 정점 보스를 처치하면 기존 협동 보상 범위에 해당하는 참가자에게 완료 기록을 남깁니다. 이전 버전에서 이미 완료한 기록은 자동으로 추정하지 않습니다. 운영자가 게임에 접속하여 <code>/cte endgame unlock 플레이어이름</code>으로 해당 접속자의 기록을 이관할 수 있습니다. 운영자 권한 2 이상이 필요합니다.</p>
 <ol>
@@ -24,14 +24,17 @@
 <tr><td>4인 공략 · 사슬의 용광로</td><td>실제 플레이어 4명, 전원 초월정점 완료</td><td>7억</td><td>체력 50%에서, 이후 일정 간격으로 네 모서리 발판 협동. 15초 내 한 명씩 다른 발판에서 2초 유지. 실패하면 전장 충격파</td></tr>
 <tr><td>4인 공략 · 일식의 쌍성</td><td>실제 플레이어 4명, 전원 초월정점 완료</td><td>두 보스 각 3억 5천만</td><td>발판 협동 + 한 보스가 쓰러지면 30초 내 나머지 처치. 두 보스의 체력을 함께 조절</td></tr>
 <tr><td>개인시련 · 열 개의 문</td><td>혼자, 정점 완료</td><td>10단계 연속. 일반 적 각 200만 × 단계, 5·10단계 보스 추가</td><td>짝수 단계는 중앙 11칸 밖에서 침식 피해. 적 전멸 시 다음 단계. 한 번 사망하면 종료</td></tr>
-<tr><td>지도 시련 · 폐허 회랑</td><td>혼자, 정점 완료</td><td>세 구역, 근접 파수꾼 + 마지막 보스</td><td>각 구역 전멸 후 색 발판으로 이동</td></tr>
-<tr><td>지도 시련 · 가시 정원</td><td>혼자, 정점 완료</td><td>세 구역, 거미 + 마지막 보스</td><td>각 구역 중앙의 세로 띠를 피해 이동</td></tr>
-<tr><td>지도 시련 · 망각의 묘실</td><td>혼자, 정점 완료</td><td>세 구역, 원거리 파수꾼 + 마지막 보스</td><td>주기적인 중앙 파동에 주의</td></tr>
+<tr><td>지도 시련 · 폐허 회랑</td><td>혼자, 정점 완료</td><td>세 구역, 구역당 근접 파수꾼 30마리 동시 등장 + 마지막 보스 1마리</td><td>각 구역 전멸 후 색 발판으로 이동</td></tr>
+<tr><td>지도 시련 · 가시 정원</td><td>혼자, 정점 완료</td><td>세 구역, 구역당 거미 30마리 동시 등장 + 마지막 보스 1마리</td><td>각 구역 중앙의 세로 띠를 피해 이동</td></tr>
+<tr><td>지도 시련 · 망각의 묘실</td><td>혼자, 정점 완료</td><td>세 구역, 구역당 원거리 파수꾼 30마리 동시 등장 + 마지막 보스 1마리</td><td>주기적인 중앙 파동에 주의</td></tr>
 </tbody></table></div>
 <p>기존 파괴수·변명자·좀비·스켈레톤·거미 모델과 기본 AI에 전용 능력치·보호막·전장 기믹을 붙인 구현입니다. 보스는 원본 정점 몬스터 등급의 군중제어 저항을 사용합니다. 전장은 새 차원 <code>cte2_multiplayer:endgame</code> 안에 분리되며, 기존 세이브의 지형을 공사하지 않습니다.</p>
 <h2 id="section-3">표시와 규칙</h2>
 <ul>
-<li>붉은 원은 3초 뒤 폭발합니다. 바닥의 발광 블록과 색 표식은 별도 텍스처 팩 없이 표시됩니다.</li>
+<li>폭발 예고는 <strong>붉게 칠해진 바닥</strong>과 가운데 발광 블록으로 표시하며 3초 뒤 폭발합니다. 실제 피해 반경은 <strong>3.5칸</strong>이고, 바닥은 피해 원과 닿는 블록 전체를 표시하므로 보수적으로 조금 넓습니다. 붉은 바닥 바깥으로 충분히 벗어나세요. 파티클을 최소로 설정해도 바닥 표시는 유지됩니다. 폭발·구역 완료·도전 종료 시 원래 바닥과 발판으로 복구합니다.</li>
+<li>화면 상단에 현재 전장·구역·남은 적·귀환 방법을 표시합니다. 구역을 모두 정리하면 목표 발판의 색·방향·거리로 안내가 바뀝니다. CTE 상점의 <strong>도전·귀환</strong> 버튼 또는 <code>/cte endgame</code>으로 현재 도전 안내와 <strong>포기·귀환</strong> 버튼을 열 수 있습니다.</li>
+<li>지도 시련 세 종류 모두 <strong>구역당 일반 몬스터 30마리가 한 번에 등장</strong>합니다. 세 구역 합계 일반 90마리와 마지막 보스 1마리입니다. 구역별 전멸과 발판 이동 방식은 유지합니다.</li>
+<li><strong>원본 귀환진주도 전용 전장에서 사용할 수 있습니다.</strong> 손이나 보조 손에 들고 사용하면 입장 전 위치로 돌아가며 도전을 포기합니다. 바닥을 바라보고 사용해도 됩니다. 실제 귀환이 성공한 뒤 진주 한 개를 소모하며, 이동이 거부되면 진주와 저장된 귀환 위치를 유지합니다. 파티 도전 중 한 명이 귀환하면 파티 도전 전체가 종료되고 전원 복귀합니다. 진주 없이도 <code>/cte endgame leave</code>를 쓸 수 있고 운영자 권한은 필요 없습니다.</li>
 <li>발판은 중앙 금색 블록 주변 2.5칸 안에서 바닥에 서 있어야 인정됩니다. 용병·소환수는 네 사람이나 발판 인원을 대신하지 못합니다.</li>
 <li>지도 시련은 왼쪽 방 → 가운데 방 → 오른쪽 방 순서입니다. 각 방 적을 모두 처치한 뒤 첫 방 <strong>빨강</strong>, 둘째 방 <strong>초록</strong>, 마지막 방 <strong>파랑</strong> 표식의 금색 발판을 밟습니다.</li>
 <li>4인 보스의 공용 부활은 기본 4회이며, 사망자는 8초 후 복귀합니다. 부활 대기 중 본인과 소환수의 공격은 제한됩니다. 부활을 사용한 공략은 완료 보상을 받을 수 있으나 순위에는 등록하지 않습니다.</li>
@@ -71,7 +74,7 @@
 </tbody></table></div>
 <p>체력은 몬스터당 최대 14억으로 제한합니다. 정수 체력·보호막 처리의 범위를 넘기지 않기 위한 상한입니다. 기존 입장 조건과 파티 제한을 없애는 테스트용 우회 명령은 배포하지 않습니다. 기록 이관 명령은 정점 완료 표시만 보완합니다.</p>
 <h2 id="section-6">검증 범위와 오픈 전 확인</h2>
-<p>규칙 자동 검사 98개와 실제 Forge 47.4.23 전용 서버에 필수 의존 모드를 넣은 격리 검사 261개를 통과했습니다. 격리 검사에서는 전장 차원 등록, 7개 항목 생성, 개인시련 10단계·지도 시련 3구역의 체력 연동, 단계 보호막, 피해 취소, 종료 정리 등을 확인했습니다. 검은 오브 변환, 전용 지도 등록·구매·두 화폐 거스름돈, 안내인 배치·피해 보호도 검사했습니다. 네 개의 서버 플레이어 객체를 생성하여 장치 예약·준비·전원 이동·한 장 소모·복귀, 이동 취소 시 지도 보존을 확인했습니다. 이는 실제 클라이언트 네 명의 접속 시험과 다릅니다. 기존 오브·거래·환산·프리셋 회귀 검사도 통과했습니다.</p>
+<p>규칙 자동 검사 98개와 실제 Forge 47.4.23 전용 서버에 필수 의존 모드를 넣은 격리 검사 725개를 통과했습니다. 격리 검사에서는 전장 차원 등록, 7개 항목 생성, 개인시련 10단계·지도 시련 3구역의 체력 연동, 단계 보호막, 피해 취소, 종료 정리 등을 확인했습니다. 검은 오브 변환, 전용 지도 등록·구매·두 화폐 거스름돈, 안내인 배치·피해 보호도 검사했습니다. 네 개의 서버 플레이어 객체를 생성하여 장치 예약·준비·전원 이동·한 장 소모·복귀, 이동 취소 시 지도 보존을 확인했습니다. 이는 실제 클라이언트 네 명의 접속 시험과 다릅니다. 원본 귀환진주와 보조 손·바닥 우클릭, 이동 취소 시 진주·위치 보존과 재시도, 운영자 권한 없는 귀환, 세 시련의 모든 구역 30마리 동시 생성, 폭발 바닥의 표시·범위·원상 복구와 서버 전송용 목표 데이터도 검사했습니다. 기존 오브·거래·환산·프리셋 회귀 검사도 통과했습니다.</p>
 <p><strong>실제 네 사람의 전투와 30명 동시 부하 검증은 아직 하지 않았습니다.</strong> 첫 버전은 플레이테스트용이며 공략 시간·기믹 피해·보상은 실제 참가자의 기록으로 조정해야 합니다. 본 서버 오픈 전에 별도 테스트 월드에서 아래를 확인하십시오.</p>
 <ol>
 <li>네 사람이 실제 MNS 파티로 참가·준비·발판·공용 부활을 수행하는지, 용병과 소환수의 공격이 정상인지.</li>

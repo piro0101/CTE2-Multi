@@ -74,6 +74,8 @@ def build(release_id, tag):
         with zipfile.ZipFile(io.BytesIO(data[ADDON])) as core:
             assert 'kr/cte2/multi/endgame/Challenges.class' in core.namelist()
             assert 'kr/cte2/multi/endgame/ChallengeMaps.class' in core.namelist()
+            assert 'kr/cte2/multi/mixin/ChallengeReturnPearlMixin.class' in core.namelist()
+            assert 'kr/cte2/multi/client/ChallengeHud.class' in core.namelist()
             assert 'kr/cte2/multi/mixin/ChallengeMapDeviceMixin.class' in core.namelist()
             assert 'kr/cte2/multi/mixin/ChallengeMapActionsMixin.class' in core.namelist()
             assert core.read('assets/cte2_multiplayer/textures/item/ascended_map_upgrade.png').startswith(b'\x89PNG\r\n\x1a\n')

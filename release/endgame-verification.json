@@ -1,10 +1,10 @@
 {
-  "time": "2026-11-12T09:07:34.024932+00:00",
-  "core_version": "0.4.0",
-  "game_release_id": "game-0.4.0",
-  "raw_addon_sha256": "6047cfafc2d83fb855b2313e20f2fb030e22e107765029b04f97f5286a6a1c8b",
+  "time": "2026-11-13T10:23:28.714587+00:00",
+  "core_version": "0.4.1",
+  "game_release_id": "game-0.4.1",
+  "raw_addon_sha256": "6647a42bacbaae6335f19527980ff4622a691a6ad00c7718ae01438be84d595c",
   "rule_assertions": 98,
-  "native_forge_assertions": 261,
+  "native_forge_assertions": 725,
   "native_runtime": "Minecraft 1.20.1 / Forge 47.4.23 / 11 required dependency mods",
   "regression_suite": "passed: verify.py (including both-side native mixin transformations, transactions, wallets, orbs, presets, protected originals)",
   "scope": [
@@ -21,7 +21,12 @@
     "both-currency map purchase, change and missing-currency rejection",
     "four synthetic server players: device reservation, ready, transfer, one-map consumption and return",
     "canceled dimension transfer: source map retained and roster returned",
-    "guide NPC placement, anchoring, native damage cancellation and removal"
+    "guide NPC placement, anchoring, native damage cancellation and removal",
+    "native return pearl including offhand and protected-floor right click",
+    "return canceled by another mod preserves pearl and return position; orphan retry",
+    "all three speedrun modes spawn thirty simultaneous normal enemies per room plus final boss",
+    "server objective names, enemy counts and exit-pad directions",
+    "particle-independent warning floor covers true 3.5-block damage radius and restores exact original blocks"
   ],
   "not_tested": [
     "four real connected players",
