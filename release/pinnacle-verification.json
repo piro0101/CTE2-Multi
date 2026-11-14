@@ -1,9 +1,9 @@
 {
-  "core_version": "0.5.1",
-  "game_release_id": "game-0.5.1",
-  "raw_addon_sha256": "6e502c530e6d35f90259caf7fe31e689c0777967d1ea37ad843c2de5c529e157",
+  "core_version": "0.5.2",
+  "game_release_id": "game-0.5.2",
+  "raw_addon_sha256": "8d1c02c9cb9c404c3f460c74ea942ba42c337cae60eabdae78d92f4cfd1c8f48",
   "full_regression_passed": true,
-  "native_forge_isolated_checks": 249,
+  "native_forge_isolated_checks": 255,
   "native_assertions": [
     "native map dimension exists",
     "ordinary player needs no OP to use vendor",
@@ -44,7 +44,13 @@
     "four corner fragments match actual native workbench recipe",
     "workbench recipe yields exactly one enhancement orb",
     "three fragments cannot craft enhancement orb",
-    "inventory two-by-two crafting cannot bypass workbench requirement",
+    "four enhanced fragments craft in inventory two-by-two grid",
+    "inventory enhanced recipe produces correct orb",
+    "four native pinnacle fragments craft in inventory two-by-two grid",
+    "native inventory recipe produces exactly one original pinnacle orb",
+    "native pinnacle recipe still requires all four fragments",
+    "native pinnacle fragments also craft in workbench in any placement",
+    "native and enhanced fragments cannot be mixed",
     "ordinary shop cannot sell upgrade orb or fragment",
     "all seven NPC categories exist",
     "support catalog exists",
@@ -281,5 +287,6 @@
   "real_human_gui_test": false,
   "thirty_player_load_test": false,
   "fixture_scope": "Native Forge server, synthetic ServerPlayer, selected installed CTE registry definitions. Not the complete modpack. Lightman optional Quark loot-table warning is unrelated to this feature.",
-  "fragment_acquisition": "One guaranteed shared physical drop per native pinnacle boss. Four corner fragments in vanilla 3x3 crafting table produce one upgrade orb. No boss-point purchase."
+  "fragment_acquisition": "One guaranteed shared drop per pinnacle boss. Four enhanced fragments or four original pinnacle fragments craft their respective upgrade orb in either 2x2 inventory or 3x3 workbench, any arrangement. Cannot mix fragment kinds.",
+  "inventory_crafting": true
 }

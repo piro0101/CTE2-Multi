@@ -26,5 +26,5 @@
   "_comment_유니크": "원본 league가 pinnacle/uber/strongbox/harvest/obelisk/prophecy/imprisoned_monster인 활성 유니크. 가격은 min(uniqueMaxPrice,ceil(uniqueBasePrice*sqrt(10000/가중치))). 숨김·가중치0·비유니크 제외. extraUniqueIds로 활성 유니크 추가, excludedUniqueIds로 제외.",
   "_comment_개별가격": "itemPrices 예: {\"support:phys_to_fire\":80,\"aura:실제ID\":80,\"codex:blood\":150,\"jewel:str\":120,\"orb:mmorpg:currency/실제ID\":20,\"unique:실제유니크ID\":300}. 실제 ID를 쓰세요. 항목을 삭제하면 기본 계산 사용.",
   "_comment_다시읽기": "서버에서 수정 후 /cte reload. 최대 배율 체력100·공격력10. 코덱스는 추가 옵션 1개 지정, 나머지 원본 무작위. 주얼은 실제 부착 가능 능력치 2개 지정, 나머지 원본 무작위. 수치 고정 아님.",
-  "_comment_획득": "강화 정점 조각은 정점 보스 처치 시 1개 확정 공용 드랍입니다. 보스 위치에 떨어지며 파티원 각각에게 복사 지급하지 않습니다. 일반 3×3 작업대의 네 모서리에 4개를 배치하면 강화 오브 1개를 제작합니다. 인벤토리 2×2 조합 불가. 보스 포인트 구매 경로는 제거했습니다."
+  "_comment_획득": "강화 정점 조각은 정점 보스 처치 시 1개 확정 공용 드랍입니다. 강화 정점 조각 4개 → 강화 오브 1개. 기존 정점 조각 4개 → 기존 정점 업그레이드 오브 1개. 두 조합 모두 인벤토리 2×2와 작업대 3×3에서 위치에 상관없이 가능합니다. 서로 다른 종류의 조각은 섞을 수 없습니다. 보스 포인트 구매 경로는 제거된 상태입니다."
 }
