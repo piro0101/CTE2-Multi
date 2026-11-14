@@ -1,37 +1,22 @@
 {
-  "time": "2026-11-13T10:23:28.714587+00:00",
-  "core_version": "0.4.1",
-  "game_release_id": "game-0.4.1",
-  "raw_addon_sha256": "6647a42bacbaae6335f19527980ff4622a691a6ad00c7718ae01438be84d595c",
-  "rule_assertions": 98,
-  "native_forge_assertions": 725,
-  "native_runtime": "Minecraft 1.20.1 / Forge 47.4.23 / 11 required dependency mods",
-  "regression_suite": "passed: verify.py (including both-side native mixin transformations, transactions, wallets, orbs, presets, protected originals)",
-  "scope": [
-    "dimension codec",
-    "seven encounter entries",
-    "solo stages 1-10",
-    "three-room speedrun stages",
-    "native HP calculation/conversion",
-    "phase gates and guardian shield",
-    "native canceled damage",
-    "enemy and chunk ticket cleanup",
-    "native pinnacle upgrade drag/drop and fixed conditions",
-    "seven native-device challenge maps and master currency bag compatibility",
-    "both-currency map purchase, change and missing-currency rejection",
-    "four synthetic server players: device reservation, ready, transfer, one-map consumption and return",
-    "canceled dimension transfer: source map retained and roster returned",
-    "guide NPC placement, anchoring, native damage cancellation and removal",
-    "native return pearl including offhand and protected-floor right click",
-    "return canceled by another mod preserves pearl and return position; orphan retry",
-    "all three speedrun modes spawn thirty simultaneous normal enemies per room plus final boss",
-    "server objective names, enemy counts and exit-pad directions",
-    "particle-independent warning floor covers true 3.5-block damage radius and restores exact original blocks"
+  "time": "2026-11-14T08:07:19.791493+00:00",
+  "core_version": "0.4.2",
+  "game_release_id": "game-0.4.2",
+  "raw_addon_sha256": "08624d949b839b9d759d19f80e80b2e12d55baa7aaa6351e8898ed891ec29833",
+  "status": "ENDGAME_REMOVED",
+  "native_forge_retirement_assertions": 48,
+  "unchanged_pre_endgame_classes": 106,
+  "regression_suite": "passed verify.py and protected original checks",
+  "compatibility_only": [
+    "inert old item IDs",
+    "empty old dimension key",
+    "restore stranded players without OP",
+    "remove only old tagged guides and mobs",
+    "release old forced chunk tickets",
+    "reject old tickets on original map device"
   ],
   "not_tested": [
-    "four real connected players",
-    "30 concurrent players / prolonged TPS and memory",
-    "complete client GUI interaction",
-    "forced power loss during endgame reward claim"
+    "real connected player migration",
+    "30 concurrent players load"
   ]
 }

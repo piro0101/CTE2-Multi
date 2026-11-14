@@ -40,7 +40,6 @@ def build(release_id, tag):
     assert re.fullmatch(r'[a-zA-Z0-9._-]{1,64}', game['release_id'])
     manifest['game_release_id'] = game['release_id']
     stamped = None
-    endgame_config = None
     for role in ['client', 'server']:
         base = ROOT / 'release/payload' / role
         data = {}
@@ -64,23 +63,13 @@ def build(release_id, tag):
                     assert nested.testzip() is None, rel
             data[rel] = raw
         assert ADDON in data and len(data) >= 20
-        challenge_raw = data['config/cte2_endgame.json']
-        challenge = json.loads(challenge_raw.decode('utf-8-sig'))
-        assert 1 <= challenge['maxSessions'] <= 30 and challenge['raidRevives'] >= 0
-        assert challenge['requirePinnacle'] and challenge['minLevel'] == 100
-        if endgame_config is None:
-            endgame_config = challenge_raw
-        assert endgame_config == challenge_raw, 'Client/server endgame defaults differ'
+        assert 'config/cte2_endgame.json' not in data, 'Retired challenge settings must not be distributed'
         with zipfile.ZipFile(io.BytesIO(data[ADDON])) as core:
-            assert 'kr/cte2/multi/endgame/Challenges.class' in core.namelist()
-            assert 'kr/cte2/multi/endgame/ChallengeMaps.class' in core.namelist()
-            assert 'kr/cte2/multi/mixin/ChallengeReturnPearlMixin.class' in core.namelist()
-            assert 'kr/cte2/multi/client/ChallengeHud.class' in core.namelist()
-            assert 'kr/cte2/multi/mixin/ChallengeMapDeviceMixin.class' in core.namelist()
-            assert 'kr/cte2/multi/mixin/ChallengeMapActionsMixin.class' in core.namelist()
-            assert core.read('assets/cte2_multiplayer/textures/item/ascended_map_upgrade.png').startswith(b'\x89PNG\r\n\x1a\n')
-            assert 'assets/cte2_multiplayer/models/item/ascended_map_upgrade.json' in core.namelist()
-            assert sum(n.startswith('assets/cte2_multiplayer/models/item/challenge_map_') for n in core.namelist()) == 7
+            assert not any('/endgame/' in n or 'Challenge' in n or 'Endgame' in n for n in core.namelist()), 'Removed encounter code or GUI returned'
+            assert 'kr/cte2/multi/compat/RetiredContent.class' in core.namelist()
+            assert 'kr/cte2/multi/mixin/RetiredMapDeviceMixin.class' in core.namelist()
+            assert 'assets/cte2_multiplayer/textures/item/ascended_map_upgrade.png' not in core.namelist()
+            assert json.loads(core.read('assets/cte2_multiplayer/models/item/ascended_map_upgrade.json'))['textures']['layer0']=='minecraft:item/barrier'
             dimension = json.loads(core.read('data/cte2_multiplayer/dimension/endgame.json'))
             assert dimension['generator']['type'] == 'minecraft:flat' and dimension['generator']['settings']['layers'] == []
             assert not any('smoke' in n.lower() for n in core.namelist()), 'Test server code must not be distributed'
