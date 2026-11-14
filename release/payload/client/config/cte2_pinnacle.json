@@ -2,7 +2,6 @@
   "healthMultiplier": 3.0,
   "damageMultiplier": 1.25,
   "completionCoins": 10,
-  "upgradeBossPrice": 50,
   "supportPrice": 60,
   "auraPrice": 60,
   "codexPrice": 120,
@@ -22,9 +21,10 @@
   "excludedUniqueIds": [],
   "_comment_강화": "미사용 원본 정점 지도에 드래그하는 신규 강화 오브입니다. 원본 지도와 지형·몬스터·패턴·접사·보상·귀환을 유지합니다. 몬스터만 healthMultiplier 배 체력, damageMultiplier 배 공격력 적용. 변환 시 배율과 completionCoins가 지도에 저장되며 이후 설정 변경은 기존 강화 지도에 소급되지 않습니다.",
   "_comment_주화": "completionCoins는 원본 강화 정점 지도를 완전히 클리어할 때 참가자별로 지급하는 정점 주화입니다. 지도 UUID별 한 번. 장착 코인지갑 지원, 다른 두 화폐와 환전하지 않습니다. 공간 부족 시 계정 미수령 보상으로 보관하고 NPC에서 받습니다.",
-  "_comment_가격": "upgradeBossPrice만 기존 보스 포인트입니다. supportPrice/auraPrice/codexPrice/jewelPrice 및 orbPrices/uniqueBasePrice/uniqueMaxPrice는 정점 주화 개수입니다. 초기 가격이며 실제 운영 수급을 보고 조정하세요.",
+  "_comment_가격": "supportPrice/auraPrice/codexPrice/jewelPrice 및 orbPrices/uniqueBasePrice/uniqueMaxPrice는 정점 주화 개수입니다. 강화 오브는 판매하지 않고 조각 4개로 제작합니다. 나머지 가격은 기존과 같습니다.",
   "_comment_오브": "orbPrices는 일반·고급·희귀·영웅·전설·신화 순서입니다. 기존 강화소모품 중 오브 상점에 등록된 품목을 선택합니다.",
   "_comment_유니크": "원본 league가 pinnacle/uber/strongbox/harvest/obelisk/prophecy/imprisoned_monster인 활성 유니크. 가격은 min(uniqueMaxPrice,ceil(uniqueBasePrice*sqrt(10000/가중치))). 숨김·가중치0·비유니크 제외. extraUniqueIds로 활성 유니크 추가, excludedUniqueIds로 제외.",
   "_comment_개별가격": "itemPrices 예: {\"support:phys_to_fire\":80,\"aura:실제ID\":80,\"codex:blood\":150,\"jewel:str\":120,\"orb:mmorpg:currency/실제ID\":20,\"unique:실제유니크ID\":300}. 실제 ID를 쓰세요. 항목을 삭제하면 기본 계산 사용.",
-  "_comment_다시읽기": "서버에서 수정 후 /cte reload. 최대 배율 체력100·공격력10. 코덱스는 추가 옵션 1개 지정, 나머지 원본 무작위. 주얼은 실제 부착 가능 능력치 2개 지정, 나머지 원본 무작위. 수치 고정 아님."
+  "_comment_다시읽기": "서버에서 수정 후 /cte reload. 최대 배율 체력100·공격력10. 코덱스는 추가 옵션 1개 지정, 나머지 원본 무작위. 주얼은 실제 부착 가능 능력치 2개 지정, 나머지 원본 무작위. 수치 고정 아님.",
+  "_comment_획득": "강화 정점 조각은 정점 보스 처치 시 1개 확정 공용 드랍입니다. 보스 위치에 떨어지며 파티원 각각에게 복사 지급하지 않습니다. 일반 3×3 작업대의 네 모서리에 4개를 배치하면 강화 오브 1개를 제작합니다. 인벤토리 2×2 조합 불가. 보스 포인트 구매 경로는 제거했습니다."
 }
