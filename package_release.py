@@ -34,7 +34,7 @@ def build(release_id, tag):
     output = ROOT / 'dist/release'
     output.mkdir(parents=True, exist_ok=True)
     digest = lambda b: hashlib.sha256(b).hexdigest()
-    manifest = {'schema': 1, 'release_id': release_id, 'minimum_patcher': '1.1.0',
+    manifest = {'schema': 1, 'release_id': release_id, 'minimum_patcher': '1.1.1',
                 'notes': (ROOT / 'release/notes.md').read_text('utf-8'), 'packages': {}}
     game = json.loads((ROOT / 'release/game-version.json').read_text('utf-8'))
     assert re.fullmatch(r'[a-zA-Z0-9._-]{1,64}', game['release_id'])

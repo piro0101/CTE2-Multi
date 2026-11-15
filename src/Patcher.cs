@@ -15,6 +15,10 @@ using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
 namespace Cte2Patcher {
+    public static class RuntimeSetup {
+        // Must run before WinForms or any System.IO call caches legacy path handling.
+        public static void Initialize(){AppContext.SetSwitch("Switch.System.IO.UseLegacyPathHandling",false);AppContext.SetSwitch("Switch.System.IO.BlockLongPaths",false);}
+    }
     public class PatchFile { public string path {get;set;} public string sha256 {get;set;} public long bytes {get;set;} }
     public class Package { public string url {get;set;} public string sha256 {get;set;} public long bytes {get;set;} public List<PatchFile> files {get;set;} }
     public class Release { public int schema {get;set;} public string release_id {get;set;} public string minimum_patcher {get;set;} public string notes {get;set;} public Dictionary<string,Package> packages {get;set;} }
@@ -22,8 +26,8 @@ namespace Cte2Patcher {
     public class Journal { public string root {get;set;} public string backup {get;set;} public string phase {get;set;} public List<Change> changes {get;set;} }
     public class Preferences { public string folder {get;set;} public string launcher {get;set;} public bool korean {get;set;} public string profile {get;set;} }
     public static class Engine {
-        static Engine(){AppContext.SetSwitch("Switch.System.IO.UseLegacyPathHandling",false);AppContext.SetSwitch("Switch.System.IO.BlockLongPaths",false);}
-        public const string Version="1.1.0";
+        static Engine(){RuntimeSetup.Initialize();}
+        public const string Version="1.1.1";
         public const string Feed="https://github.com/piro0101/CTE2-Multi/releases/latest/download/update.json";
         public const string Guide="https://github.com/piro0101/CTE2-Multi#readme";
         public static readonly JavaScriptSerializer Json=new JavaScriptSerializer {MaxJsonLength=8*1024*1024};
@@ -75,8 +79,14 @@ namespace Cte2Patcher {
         public static string NormalizeFolder(string folder){
             string root=ExpandFolder(folder);
             if(!Directory.Exists(Path.Combine(root,"mods"))&&Directory.Exists(Path.Combine(root,"instance","mods")))root=Path.Combine(root,"instance");
+            if(string.Equals(Path.GetFileName(root.TrimEnd(Path.DirectorySeparatorChar)),"instances",StringComparison.OrdinalIgnoreCase))throw new IOException("instances는 여러 게임을 담는 상위 폴더입니다. 그 안의 사용할 CTE2 폴더 → instance를 선택하세요. mods와 config가 보이는 위치입니다.");
             if(!Directory.Exists(Path.Combine(root,"mods"))||!Directory.GetFiles(Path.Combine(root,"mods"),"Mine_and_Slash-1.20.1-6.4.13.jar").Any())throw new IOException("CTE2 2.1.4가 먼저 설치된 게임 폴더를 선택하세요. mods 폴더가 보이는 위치입니다.");
             return root;
+        }
+        public static string DefaultGameFolder(string instances){
+            if(!Directory.Exists(instances))return "";
+            var candidates=Directory.GetDirectories(instances).Select(p=>Path.Combine(p,"instance")).Where(p=>File.Exists(Path.Combine(p,"mods","Mine_and_Slash-1.20.1-6.4.13.jar"))).Take(2).ToList();
+            return candidates.Count==1?candidates[0]:"";
         }
         public static List<PatchFile> Needed(string root,Package package){return package.files.Where(f=>{string p=Child(root,f.path);return !File.Exists(p)||new FileInfo(p).Length!=f.bytes||HashFile(p)!=f.sha256;}).ToList();}
         static void WriteAtomic(string path,byte[] data){
@@ -176,14 +186,17 @@ namespace Cte2Patcher {
         public MainWindow(){
             Text="CTE2 패치기 · "+Engine.Version;AutoScaleMode=AutoScaleMode.Dpi;ClientSize=new Size(760,620);MinimumSize=new Size(776,659);StartPosition=FormStartPosition.CenterScreen;Font=new Font("맑은 고딕",10);BackColor=Color.FromArgb(17,25,39);ForeColor=Color.White;
             Controls.Add(new Label{Text="CTE2 서버 패치",Font=new Font(Font.FontFamily,23,FontStyle.Bold),Location=new Point(24,20),AutoSize=true});Controls.Add(new Label{Text="최신 버전을 확인하고 업데이트한 뒤 게임을 시작하세요.",Location=new Point(27,68),AutoSize=true,ForeColor=Color.LightSteelBlue});
-            Controls.Add(new Label{Text="게임 폴더 · 주소창에 %appdata% 입력 가능",Location=new Point(24,110),AutoSize=true});folder.SetBounds(24,135,602,28);Controls.Add(folder);var browse=new Button{Text="폴더 선택",Location=new Point(634,134),Size=new Size(100,30)};browse.Click+=(s,e)=>{try{string selected=ExplorerFolderPicker.Pick(this,folder.Text);if(selected!=null)folder.Text=selected;}catch(Exception ex){MessageBox.Show(this,ex.Message,"폴더 선택",MessageBoxButtons.OK,MessageBoxIcon.Information);}};Controls.Add(browse);
+            Controls.Add(new Label{Text="게임 폴더 · mods·config가 있는 instance 선택 · %appdata% 입력 가능",Location=new Point(24,110),AutoSize=true});folder.SetBounds(24,135,602,28);Controls.Add(folder);var browse=new Button{Text="폴더 선택",Location=new Point(634,134),Size=new Size(100,30)};browse.Click+=(s,e)=>{try{string initial=folder.Text;if(string.IsNullOrWhiteSpace(initial))initial=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"gdlauncher_carbon","data","instances");string selected=ExplorerFolderPicker.Pick(this,initial);if(selected!=null)folder.Text=selected;}catch(Exception ex){MessageBox.Show(this,ex.Message,"폴더 선택",MessageBoxButtons.OK,MessageBoxIcon.Information);}};Controls.Add(browse);
             Controls.Add(new Label{Text="연결할 런처 실행 파일",Location=new Point(24,179),AutoSize=true});launcher.SetBounds(24,204,602,28);Controls.Add(launcher);var choose=new Button{Text="런처 선택",Location=new Point(634,203),Size=new Size(100,30)};choose.Click+=(s,e)=>{using(var d=new OpenFileDialog{Filter="실행 파일 (*.exe)|*.exe",Title="GDLauncher 또는 사용 중인 런처를 선택하세요."})if(d.ShowDialog()==DialogResult.OK)launcher.Text=d.FileName;};Controls.Add(choose);
             Controls.Add(new Label{Text="필수 패치 · 편의 모드 포함",Location=new Point(24,255),AutoSize=true,ForeColor=Color.LightSteelBlue});korean.Text="한국어·한글 리소스팩 자동 설정";korean.SetBounds(264,250,420,30);korean.Checked=true;Controls.Add(korean);
             update.Text="확인하고 업데이트";update.SetBounds(24,294,220,44);update.BackColor=Color.FromArgb(246,196,88);update.ForeColor=Color.FromArgb(20,28,39);update.FlatStyle=FlatStyle.Flat;update.Click+=async(s,e)=>await Run(false);Controls.Add(update);
             play.Text="업데이트 후 런처 실행";play.SetBounds(258,294,280,44);play.Click+=async(s,e)=>await Run(true);Controls.Add(play);var guide=new Button{Text="설치 안내",Location=new Point(552,294),Size=new Size(180,44)};guide.Click+=(s,e)=>Process.Start(Engine.Guide);Controls.Add(guide);
             state.Text="게임을 완전히 종료한 뒤 업데이트하세요. 기존 파일은 백업 후 수정본으로 교체합니다.";state.SetBounds(24,351,710,28);Controls.Add(state);log.SetBounds(24,387,710,200);log.Multiline=true;log.ReadOnly=true;log.ScrollBars=ScrollBars.Vertical;log.BackColor=Color.FromArgb(9,15,25);log.ForeColor=Color.LightSteelBlue;log.Anchor=AnchorStyles.Top|AnchorStyles.Bottom|AnchorStyles.Left|AnchorStyles.Right;Controls.Add(log);
             preferenceFile=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"CTE2-Patcher","preferences.json");try{prefs=Engine.Json.Deserialize<Preferences>(File.ReadAllText(preferenceFile,Encoding.UTF8));folder.Text=prefs.folder;launcher.Text=prefs.launcher;korean.Checked=prefs.korean;}catch{prefs=new Preferences();}
-            if(folder.Text.Length==0){string gd=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"gdlauncher_carbon","data","instances");if(Directory.Exists(gd))folder.Text=gd;}
+            if(folder.Text.Length==0||string.Equals(folder.Text.TrimEnd('\\','/').Split('\\','/').Last(),"instances",StringComparison.OrdinalIgnoreCase)){
+                string gd=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),"gdlauncher_carbon","data","instances");folder.Text=Engine.DefaultGameFolder(gd);
+                if(folder.Text.Length==0)state.Text="폴더 선택 → 사용할 CTE2 폴더 → instance를 선택하세요. mods·config가 보이는 위치입니다.";
+            }
             foreach(var button in Controls.OfType<Button>()){button.FlatStyle=FlatStyle.Flat;button.UseVisualStyleBackColor=false;if(button!=update){button.BackColor=Color.FromArgb(46,64,84);button.ForeColor=Color.White;}}
             foreach(var box in new[]{folder,launcher}){box.BackColor=Color.FromArgb(28,40,58);box.ForeColor=Color.White;}
             FormClosing+=(s,e)=>{if(!update.Enabled){e.Cancel=true;state.Text="파일 적용 중에는 종료할 수 없습니다. 완료될 때까지 기다려 주세요.";}};
@@ -202,6 +215,6 @@ namespace Cte2Patcher {
         }
     }
     static class Program {
-        [STAThread] static void Main(){Application.EnableVisualStyles();Application.SetCompatibleTextRenderingDefault(false);Application.Run(new MainWindow());}
+        [STAThread] static void Main(){RuntimeSetup.Initialize();Application.EnableVisualStyles();Application.SetCompatibleTextRenderingDefault(false);Application.Run(new MainWindow());}
     }
 }
