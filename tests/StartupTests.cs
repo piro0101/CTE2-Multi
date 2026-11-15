@@ -19,6 +19,8 @@ namespace Cte2Patcher {
                     string input=Path.GetDirectoryName(Path.GetFullPath(args[0]));
                     foreach(string role in new[]{"client","server"}){
                         string root=Path.Combine(Path.GetFullPath(args[1]),"한글 게임 폴더 "+role+"-"+Guid.NewGuid().ToString("N"));
+                        // CI checkout paths are much shorter than GDLauncher paths.
+                        while(root.Length<170)root=Path.Combine(root,"긴 경로 검증용 폴더");
                         Directory.CreateDirectory(Path.Combine(root,"mods"));
                         File.WriteAllText(Path.Combine(root,"mods","Mine_and_Slash-1.20.1-6.4.13.jar"),"ISOLATED TEST MARKER");
                         File.WriteAllText(Path.Combine(root,"options.txt"),"resourcePacks:[\"vanilla\"]\nlang:en_us\n");
