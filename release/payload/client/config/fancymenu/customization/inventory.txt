@@ -2185,7 +2185,7 @@ vanilla_button {
 
 element {
   button_element_executable_block_identifier = cte2-shop-open-block
-  [executable_action_instance:cte2-shop-open-action][action_type:opengui] = kr.cte2.multi.client.ShopScreen
+  [executable_action_instance:cte2-shop-open-action][action_type:opengui] = kr.cte2.multi.client.ServerHubScreen
   [executable_block:cte2-shop-open-block][type:generic] = [executables:cte2-shop-open-action;]
   backgroundnormal = [source:local]/config/fancymenu/assets/inventory/hub-inventory.png
   backgroundhovered = [source:local]/config/fancymenu/assets/inventory/hub-inventory_h.png
@@ -2193,8 +2193,8 @@ element {
   transparent_background = false
   restartbackgroundanimations = true
   nine_slice_custom_background = false
-  hoverlabel = CTE 상점
-  description = CTE 상점
+  hoverlabel = CTE 안내 · 자료실 · 내 능력치
+  description = CTE 안내 · 자료실
   label = 
   navigatable = true
   widget_active_state_requirement_container_identifier = 85af045e-e18b-4813-902d-dea397278523-1735874150876
